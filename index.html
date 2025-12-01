@@ -83,9 +83,9 @@
             background: hsl(220, 15%, 30%);
         }
 
-        /* VIDEO BANNER – centered, matches layout */
+        /* VIDEO BANNER */
         .video-banner {
-            padding-top: 4.5rem;      /* clears fixed header */
+            padding-top: 4.5rem; 
             padding-bottom: 1.5rem;
         }
 
@@ -119,21 +119,23 @@
             padding: 3rem 1.5rem 4rem;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: hsl(220, 15%, 25%);
-            padding: 0.4rem 1rem;
-            border-radius: 9999px;
+        /* NEW HERO TITLES */
+        .hero-titles {
+            text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 0.8rem;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
+        .hero-header {
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-subheader {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 1.2rem;
         }
 
         .hero p {
@@ -291,13 +293,10 @@
             .footer-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
-
-            .hero h1 {
-                font-size: 3.3rem;
-            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -308,12 +307,11 @@
         </div>
     </header>
 
-    <!-- VIDEO BANNER (CENTERED, MATCHES LAYOUT) -->
+    <!-- VIDEO BANNER -->
     <section class="video-banner">
         <div class="container">
             <div class="video-wrapper">
                 <video autoplay muted loop playsinline id="bg-video">
-                    <!-- Use the URL that works for you; this is the “raw file” version -->
                     <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
                 </video>
                 <div class="video-overlay"></div>
@@ -324,15 +322,19 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Talk to God</div>
 
-            <h1>Ask Now, Hear Now, Know Now</h1>
+            <div class="hero-titles">
+                <h1 class="hero-header">Yahway</h1>
+                <h2 class="hero-subheader">Talk to God</h2>
+            </div>
+
             <p>Connect with the divine through meaningful conversation. Find guidance, peace, and answers in your spiritual journey.</p>
 
             <div class="hero-buttons">
                 <button class="btn-primary">Get Started</button>
                 <button class="btn-secondary">Learn More</button>
             </div>
+
         </div>
     </section>
 
@@ -340,15 +342,17 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div>
                     <div class="stat-number">1M+</div>
                     <div class="stat-label">Conversations</div>
                 </div>
-                <div class="stat-item">
+
+                <div>
                     <div class="stat-number">50K+</div>
                     <div class="stat-label">Daily Users</div>
                 </div>
-                <div class="stat-item">
+
+                <div>
                     <div class="stat-number">4.9</div>
                     <div class="stat-label">App Rating</div>
                 </div>
@@ -393,8 +397,9 @@
         <div class="container">
             <div class="cta-box">
                 <h2>Amplify the Journey</h2>
-                <p>Your support helps us bring spiritual connection to more people around the world.</p><br>
-                <button 
+                <p>Your support helps us bring spiritual connection to more people around the world.</p>
+                <br>
+                <button
                     class="btn-primary"
                     onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2', '_blank')"
                 >
@@ -419,4 +424,28 @@
                 </ul>
             </div>
 
-            <div class="
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.yahway.app/privacy">Privacy</a></li>
+                    <li><a href="https://www.yahway.app/terms">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yahway. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
