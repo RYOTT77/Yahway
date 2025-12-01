@@ -13,25 +13,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Roboto, Arial, sans-serif;
             background: hsl(220, 25%, 15%);
             color: white;
             line-height: 1.6;
         }
 
-        a {
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* ==========================
-           HEADER
-        ===========================*/
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
@@ -55,23 +43,6 @@
             font-weight: 700;
             color: white;
             text-decoration: none;
-            letter-spacing: 0.06em;
-        }
-
-        nav {
-            display: none; /* you currently don't use it */
-            gap: 2rem;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        nav a:hover {
-            color: white;
         }
 
         .btn-primary {
@@ -81,51 +52,13 @@
             border-radius: 9999px;
             font-weight: 600;
             text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            border: none;
             cursor: pointer;
             font-size: 0.95rem;
-            white-space: nowrap;
+            transition: 0.3s;
         }
 
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: hsl(220, 15%, 25%);
-            color: white;
-            padding: 0.6rem 1.6rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .btn-secondary:hover {
-            background: hsl(220, 15%, 30%);
-            transform: translateY(-1px);
-        }
-
-        .btn-with-icon {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Icons */
-        .icon {
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            background: #e9e9e9;
         }
 
         /* ==========================
@@ -134,8 +67,8 @@
         .video-banner {
             position: relative;
             width: 100%;
-            height: 60vh; /* fixed height on all devices */
-            margin-top: 3.25rem; /* pushes video below fixed header */
+            height: 60vh;
+            margin-top: 3.3rem; /* space below header */
             overflow: hidden;
         }
 
@@ -160,11 +93,11 @@
         }
 
         /* ==========================
-           HERO (TITLE UNDER VIDEO)
+           HERO TEXT BELOW VIDEO
         ===========================*/
         .hero {
-            padding: 3rem 1.5rem 4rem;
             text-align: center;
+            padding: 3rem 1.5rem;
         }
 
         .hero-badge {
@@ -176,21 +109,26 @@
             border-radius: 9999px;
             margin-bottom: 1.5rem;
             font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+        }
+
+        .icon {
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .hero h1 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            line-height: 1.15;
         }
 
         .hero p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.78);
-            margin-bottom: 2.2rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 2rem;
             max-width: 40rem;
             margin-left: auto;
             margin-right: auto;
@@ -199,15 +137,28 @@
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 1rem;
             align-items: center;
         }
 
-        /* ==========================
-           STATS
-        ===========================*/
+        .btn-secondary {
+            background: hsl(220, 15%, 25%);
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: hsl(220, 15%, 30%);
+        }
+
+        /* STATS */
         .stats {
-            padding: 3.5rem 1.5rem;
+            padding: 4rem 1.5rem;
         }
 
         .stats-grid {
@@ -223,19 +174,15 @@
         }
 
         .stat-number {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
         }
 
         .stat-label {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
         }
 
-        /* ==========================
-           FEATURES
-        ===========================*/
+        /* FEATURES */
         .features {
             padding: 4rem 1.5rem;
         }
@@ -248,118 +195,55 @@
         .features-header h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
-
-        .features-header p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 34rem;
-            margin: 0 auto;
+            margin-bottom: 0.5rem;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.8rem;
-            max-width: 72rem;
-            margin: 0 auto;
+            gap: 2rem;
         }
 
         .feature-card {
             background: hsl(220, 20%, 18%);
-            padding: 1.8rem;
-            border-radius: 1.3rem;
+            padding: 2rem;
+            border-radius: 1.5rem;
             border: 1px solid hsl(220, 15%, 30%);
-            transition: border-color 0.3s, transform 0.2s;
-        }
-
-        .feature-card:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .feature-icon {
-            width: 2.6rem;
-            height: 2.6rem;
-            margin-bottom: 1rem;
         }
 
         .feature-card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.5rem;
         }
 
         .feature-card p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.98rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* ==========================
-           CTA
-        ===========================*/
+        /* CTA */
         .cta {
-            padding: 4rem 1.5rem 4.5rem;
+            padding: 4rem 1.5rem;
         }
 
         .cta-box {
+            text-align: center;
             background: hsl(220, 20%, 18%);
-            border: 1px solid hsl(220, 15%, 30%);
             border-radius: 1.5rem;
             padding: 3rem 1.8rem;
-            text-align: center;
+            border: 1px solid hsl(220, 15%, 30%);
             max-width: 52rem;
             margin: 0 auto;
         }
 
-        .cta-icon {
-            width: 3rem;
-            height: 3rem;
-            margin: 0 auto 1.3rem;
-        }
-
-        .cta-box h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cta-box p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.78);
-            margin-bottom: 2rem;
-            max-width: 34rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ==========================
-           FOOTER
-        ===========================*/
+        /* FOOTER */
         footer {
             border-top: 1px solid hsl(220, 15%, 30%);
-            padding: 3rem 1.5rem 2.5rem;
-            background: radial-gradient(circle at top, rgba(255,255,255,0.04) 0, rgba(0,0,0,0.9) 55%);
+            padding: 3rem 1.5rem;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3,
-        .footer-section h4 {
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-        }
-
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
         }
 
         .footer-links {
@@ -367,59 +251,24 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
         }
 
         .footer-bottom {
-            border-top: 1px solid hsl(220, 15%, 30%);
-            padding-top: 1.5rem;
             text-align: center;
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid hsl(220, 15%, 30%);
         }
 
-        /* ==========================
-           RESPONSIVE
-        ===========================*/
-        @media (min-width: 640px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
+        /* RESPONSIVE */
         @media (min-width: 768px) {
-            nav {
-                display: flex;
-            }
-
-            .header-content {
-                padding: 0.9rem 2rem;
-            }
-
-            .hero {
-                padding: 3.5rem 1.5rem 4.5rem;
-            }
-
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-
             .stats-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -432,14 +281,12 @@
                 grid-template-columns: repeat(4, 1fr);
             }
 
-            .cta-box {
-                padding: 3.5rem 3rem;
+            .hero-buttons {
+                flex-direction: row;
             }
-        }
 
-        @media (min-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
+            .hero h1 {
+                font-size: 3.2rem;
             }
         }
     </style>
@@ -449,36 +296,31 @@
 
     <!-- HEADER -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">Yahway</a>
-                <nav>
-                    <!-- Empty for now as requested -->
-                </nav>
-                <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Download</a>
-            </div>
+        <div class="header-content container">
+            <a href="/" class="logo">Yahway</a>
+            <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Download</a>
         </div>
     </header>
 
     <!-- VIDEO BANNER -->
     <section class="video-banner">
         <video autoplay muted loop playsinline id="bg-video">
-            <source src="https://github.com/RYOTT77/Yahway/blob/main/WebVideo.mp4" type="video/mp4">
+            <source src="https://github.com/RYOTT77/Yahway/blob/main/WebVideo.mp4?raw=1" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </section>
 
-    <!-- HERO (TITLE UNDER VIDEO) -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-badge">
-                <svg class="icon" width="16" height="16" viewBox="0 0 24 24">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 <span>Talk to God</span>
             </div>
+
             <h1>Ask Now, Hear Now, Know Now</h1>
             <p>Connect with the divine through meaningful conversation. Find guidance, peace, and answers in your spiritual journey.</p>
+
             <div class="hero-buttons">
                 <button class="btn-primary">Get Started</button>
                 <button class="btn-secondary">Learn More</button>
@@ -490,57 +332,38 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">1M+</div>
-                    <div class="stat-label">Conversations</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Daily Users</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">App Rating</div>
-                </div>
+                <div class="stat-item"><div class="stat-number">1M+</div><div class="stat-label">Conversations</div></div>
+                <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Daily Users</div></div>
+                <div class="stat-item"><div class="stat-number">4.9</div><div class="stat-label">App Rating</div></div>
             </div>
         </div>
     </section>
 
     <!-- FEATURES -->
-    <section id="features" class="features">
+    <section class="features">
         <div class="container">
             <div class="features-header">
                 <h2>A New Way to Connect</h2>
                 <p>Experience spiritual guidance reimagined for the modern age.</p>
             </div>
+
             <div class="features-grid">
                 <div class="feature-card">
-                    <svg class="feature-icon icon" viewBox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
                     <h3>Private & Sacred</h3>
                     <p>Your conversations are completely private and protected.</p>
                 </div>
+
                 <div class="feature-card">
-                    <svg class="feature-icon icon" viewBox="0 0 24 24">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
                     <h3>Compassionate</h3>
                     <p>Receive guidance filled with love and understanding.</p>
                 </div>
+
                 <div class="feature-card">
-                    <svg class="feature-icon icon" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
                     <h3>Divine Wisdom</h3>
                     <p>Access spiritual insights and biblical wisdom instantly.</p>
                 </div>
+
                 <div class="feature-card">
-                    <svg class="feature-icon icon" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
                     <h3>Always Available</h3>
                     <p>Connect anytime, anywhere, day or night.</p>
                 </div>
@@ -550,24 +373,16 @@
 
     <!-- CTA -->
     <section class="cta">
-        <div class="container">
-            <div class="cta-box">
-                <svg class="cta-icon icon" viewBox="0 0 24 24">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                <h2>Amplify the Journey</h2>
-                <p>Your support helps us bring spiritual connection to more people around the world.</p>
+        <div class="cta-box container">
+            <h2>Amplify the Journey</h2>
+            <p>Your support helps us bring spiritual connection to more people around the world.</p>
 
-                <button 
-                    class="btn-primary btn-with-icon"
-                    onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2', '_blank')"
-                >
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                    Donate Now
-                </button>
-            </div>
+            <button 
+                class="btn-primary btn-with-icon"
+                onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2', '_blank')"
+            >
+                Donate Now
+            </button>
         </div>
     </section>
 
