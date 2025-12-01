@@ -19,7 +19,7 @@
             line-height: 1.6;
         }
 
-        /* ❌ Removed background video CSS
+        /* ✅ Background Video */
         #bg-video {
             position: fixed;
             top: 0;
@@ -29,7 +29,6 @@
             object-fit: cover;
             z-index: -1;
         }
-        */
 
         .container {
             max-width: 1200px;
@@ -384,7 +383,10 @@
 
 <body>
 
-    <!-- ❌ Removed background video -->
+    <!-- ✅ Background Video Added -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/webVideo.mp4" type="video/mp4">
+    </video>
 
     <!-- Header -->
     <header>
