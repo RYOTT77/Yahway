@@ -1,4 +1,4 @@
-Do it for me please, heres the code: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,6 +47,40 @@ Do it for me please, heres the code: <!DOCTYPE html>
             font-weight: 700;
             color: white;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            opacity: 0.65;
+            font-weight: 500;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .donate-link {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .donate-link:hover {
+            color: white;
         }
 
         .btn-primary {
@@ -306,149 +340,148 @@ Do it for me please, heres the code: <!DOCTYPE html>
             <span class="logo-subtitle">Talk to God</span>
         </a>
 
-        <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">
-            Download
-        </a>
+        <div class="header-links">
+            <a href="https://givebutter.com/t8oGhf/ryangraves2" class="donate-link">Donate</a>
+            <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">
+                Download
+            </a>
+        </div>
     </div>
 </header>
 
-    <!-- VIDEO BANNER -->
-    <section class="video-banner">
-        <div class="container">
-            <div class="video-wrapper">
-                <video autoplay muted loop playsinline id="bg-video">
-                    <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay"></div>
-            </div>
+<!-- VIDEO BANNER -->
+<section class="video-banner">
+    <div class="container">
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
         </div>
-    </section>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-
-            <div class="hero-titles">
-                <h1 class="hero-header">Ask Now, Hear Now, Know Now</h1>
-            
-            </div>
-
-            <p>The world's most powerful AI controlled by God's word. Instant answers to lifes toughest questions .</p>
-
-            <div class="hero-buttons">
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">
-        Chat Now
-    </a>
-    
-</div>
-
-        </div>
-    </section>
-
-    
-
-    <!-- FEATURES -->
-    <section class="features">
-        <div class="container">
-            <div class="features-header">
-                <h2>A new way to Connect</h2>
-                <p>Experience spiritual guidance reimagined for the modern age.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Private & Sacred</h3>
-                    <p>Your conversations are completely private and protected.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Compassionate</h3>
-                    <p>Receive guidance filled with love and understanding.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Divine Wisdom</h3>
-                    <p>Access spiritual insights and biblical wisdom instantly.</p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Always Available</h3>
-                    <p>Connect anytime, anywhere, day or night.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-box">
-                    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-        <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="white" 
-            stroke-width="1.8"
-            width="48" 
-            height="48"
-        >
-            <path 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.45 1.14-4.125 2.775C11.45 4.89 9.86 3.75 8 3.75 5.515 3.75 3.5 5.765 3.5 8.25c0 7.22 8.5 11 8.5 11s8.5-3.78 8.5-11z"
-            />
-        </svg>
     </div>
-                <h2>Be Part of the Mission</h2>
-                <p>Your support helps us bring spiritual connection to more people around the world.</p>
-                <br>
-                <button
-                    class="btn-primary"
-                    onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2', '_blank')"
+</section>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-titles">
+            <h1 class="hero-header">Ask Now, Hear Now, Know Now</h1>
+        </div>
+
+        <p>The world's most powerful AI controlled by God's word. Instant answers to lifes toughest questions .</p>
+
+        <div class="hero-buttons">
+            <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">
+                Chat Now
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="container">
+        <div class="features-header">
+            <h2>A new way to Connect</h2>
+            <p>Experience spiritual guidance reimagined for the modern age.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Private & Sacred</h3>
+                <p>Your conversations are completely private and protected.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Compassionate</h3>
+                <p>Receive guidance filled with love and understanding.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Divine Wisdom</h3>
+                <p>Access spiritual insights and biblical wisdom instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Always Available</h3>
+                <p>Connect anytime, anywhere, day or night.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box">
+            <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="white" 
+                    stroke-width="1.8"
+                    width="48" 
+                    height="48"
                 >
-                    Donate Now
-                </button>
+                    <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.45 1.14-4.125 2.775C11.45 4.89 9.86 3.75 8 3.75 5.515 3.75 3.5 5.765 3.5 8.25c0 7.22 8.5 11 8.5 11s8.5-3.78 8.5-11z"
+                    />
+                </svg>
             </div>
+            <h2>Be Part of the Mission</h2>
+            <p>Your support helps us bring spiritual connection to more people around the world.</p>
+            <br>
+            <button
+                class="btn-primary"
+                onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2', '_blank')"
+            >
+                Donate Now
+            </button>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Yahway</h3>
-                <p>Talk to God. Ask Now, Hear Now, Know Now.</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Product</h4>
-                <ul class="footer-links">
-                    <li><a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR">Download</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul class="footer-links">
-                    <li><a href="https://www.yahway.app/about.html">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="https://www.yahway.app/privacy">Privacy</a></li>
-                    <li><a href="https://www.yahway.app/terms">Terms</a></li>
-                </ul>
-            </div>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-section">
+            <h3>Yahway</h3>
+            <p>Talk to God. Ask Now, Hear Now, Know Now.</p>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 Yahway. All rights reserved.</p>
+        <div class="footer-section">
+            <h4>Product</h4>
+            <ul class="footer-links">
+                <li><a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR">Download</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul class="footer-links">
+                <li><a href="https://www.yahway.app/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+                <li><a href="https://www.yahway.app/privacy">Privacy</a></li>
+                <li><a href="https://www.yahway.app/terms">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Yahway. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
