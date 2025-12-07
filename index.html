@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahway: Talk to God</title>
-    <meta name="description" content="Ask Now. Hear Now. Know Now.">
+    <meta name="description" content="Ask Now, Hear Now, Know Now">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,27 +21,6 @@
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-        @keyframes logoGlow {
-    0% {
-        text-shadow: 0 0 0px rgba(255,255,255,0.25);
-        opacity: 0.9;
-    }
-    50% {
-        text-shadow: 
-            0 0 6px rgba(255,255,255,0.65),
-            0 0 14px rgba(200,200,255,0.55),
-            0 0 24px rgba(255,255,255,0.35);
-        opacity: 1;
-    }
-    100% {
-        text-shadow: 0 0 0px rgba(255,255,255,0.25);
-        opacity: 0.9;
-    }
-}
-
-.logo-title {
-    animation: logoGlow 3.5s ease-in-out infinite;
-}
 
         /* HEADER */
         header {
@@ -77,12 +56,32 @@
             font-weight: 800;
         }
 
+        /* GLOW EFFECT ON SUBTITLE */
+        @keyframes subtitleGlow {
+            0% {
+                text-shadow: 0 0 0px rgba(255,255,255,0.25);
+                opacity: 0.75;
+            }
+            50% {
+                text-shadow:
+                    0 0 6px rgba(255,255,255,0.75),
+                    0 0 14px rgba(200,200,255,0.6),
+                    0 0 24px rgba(255,255,255,0.35);
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 0 0 0px rgba(255,255,255,0.25);
+                opacity: 0.75;
+            }
+        }
+
         .logo-subtitle {
             font-size: 0.65rem;
             opacity: 0.65;
             font-weight: 500;
             margin-top: 4px;
             letter-spacing: 0.7px;
+            animation: subtitleGlow 3.8s ease-in-out infinite;
         }
 
         .header-links {
@@ -120,7 +119,7 @@
             background: #e9e9e9;
         }
 
-        /* SHORTER FULL WIDTH VIDEO */
+        /* SHORT HERO VIDEO */
         .video-banner {
             margin-top: 4.5rem;
         }
@@ -128,7 +127,7 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            height: 45vh; /* shortened */
+            height: 45vh;
             overflow: hidden;
         }
 
@@ -147,13 +146,13 @@
             pointer-events: none;
         }
 
-        /* TEXT SECTION BELOW VIDEO */
+        /* HERO TEXT SECTION BELOW VIDEO */
         .hero {
             text-align: center;
             padding: 4rem 1.5rem 4rem;
         }
 
-        /* ANIMATIONS */
+        /* SMOOTH FADE + GLOW EFFECTS */
         @keyframes smoothFadeUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -175,11 +174,11 @@
             100% { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
         }
 
-        /* APPLY EFFECTS */
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            opacity: 0;
             animation: smoothFadeUp 1s ease-out forwards, heavenlyGlow 4s ease-in-out infinite;
         }
 
@@ -188,18 +187,18 @@
             color: rgba(255,255,255,0.85);
             max-width: 600px;
             margin: 0 auto 2rem;
+            opacity: 0;
             animation: smoothFadeUp 1s ease-out forwards;
             animation-delay: 0.4s;
-            opacity: 0;
         }
 
         .hero a {
+            opacity: 0;
             animation: smoothFadeUp 1s ease-out forwards, softPulse 3.5s ease-in-out infinite;
             animation-delay: 0.8s;
-            opacity: 0;
         }
 
-        /* SECTIONS */
+        /* FEATURE + CTA + FOOTER STYLES */
         .features, .cta {
             padding: 4rem 1.5rem;
         }
@@ -222,15 +221,14 @@
             border: 1px solid hsl(220, 15%, 30%);
         }
 
-        /* CTA */
         .cta-box {
             max-width: 52rem;
             margin: 0 auto;
             background: hsl(220, 20%, 18%);
             border-radius: 1.5rem;
             padding: 3rem 1.8rem;
-            border: 1px solid hsl(220, 15%, 30%);
             text-align: center;
+            border: 1px solid hsl(220, 15%, 30%);
         }
 
         footer {
@@ -284,14 +282,11 @@
     </div>
 </section>
 
-<!-- TEXT BELOW VIDEO WITH EFFECTS -->
+<!-- HERO TEXT BELOW VIDEO -->
 <section class="hero">
     <h1>Ask Now, Hear Now, Know Now</h1>
     <p>The world's most powerful AI driven by God's word. Instant answers to life's toughest questions.</p>
-
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">
-        Chat Now
-    </a>
+    <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Chat Now</a>
 </section>
 
 <!-- FEATURES -->
@@ -326,7 +321,7 @@
     </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 <section class="cta">
     <div class="container">
         <div class="cta-box">
