@@ -99,7 +99,7 @@
             background: #e9e9e9;
         }
 
-        /* SHORTER FULL-WIDTH VIDEO HERO */
+        /* SHORTER FULL WIDTH VIDEO */
         .video-banner {
             margin-top: 4.5rem;
         }
@@ -107,7 +107,7 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            height: 45vh; /* shortened from 65vh */
+            height: 45vh; /* shortened */
             overflow: hidden;
         }
 
@@ -126,25 +126,56 @@
             pointer-events: none;
         }
 
-        /* HERO TEXT BELOW VIDEO */
+        /* TEXT SECTION BELOW VIDEO */
         .hero {
             text-align: center;
             padding: 4rem 1.5rem 4rem;
         }
 
+        /* ANIMATIONS */
+        @keyframes smoothFadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heavenlyGlow {
+            0%   { text-shadow: 0 0 0px rgba(255,255,255,0.3); opacity: 0.92; }
+            50%  { text-shadow: 
+                    0 0 12px rgba(255,255,255,0.85),
+                    0 0 22px rgba(200,200,255,0.6),
+                    0 0 35px rgba(255,255,255,0.4); 
+                   opacity: 1; }
+            100% { text-shadow: 0 0 0px rgba(255,255,255,0.3); opacity: 0.92; }
+        }
+
+        @keyframes softPulse {
+            0%   { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
+            50%  { box-shadow: 0 0 14px rgba(255,255,255,0.5); }
+            100% { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
+        }
+
+        /* APPLY EFFECTS */
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            animation: smoothFadeUp 1s ease-out forwards, heavenlyGlow 4s ease-in-out infinite;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.85);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 2rem;
+            animation: smoothFadeUp 1s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .hero a {
+            animation: smoothFadeUp 1s ease-out forwards, softPulse 3.5s ease-in-out infinite;
+            animation-delay: 0.8s;
+            opacity: 0;
         }
 
         /* SECTIONS */
@@ -170,6 +201,7 @@
             border: 1px solid hsl(220, 15%, 30%);
         }
 
+        /* CTA */
         .cta-box {
             max-width: 52rem;
             margin: 0 auto;
@@ -197,7 +229,6 @@
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .footer-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -222,7 +253,7 @@
     </div>
 </header>
 
-<!-- SHORTER FULL-WIDTH VIDEO -->
+<!-- SHORT HERO VIDEO -->
 <section class="video-banner">
     <div class="video-wrapper">
         <video autoplay muted loop playsinline id="bg-video">
@@ -232,7 +263,7 @@
     </div>
 </section>
 
-<!-- TEXT BELOW VIDEO -->
+<!-- TEXT BELOW VIDEO WITH EFFECTS -->
 <section class="hero">
     <h1>Ask Now, Hear Now, Know Now</h1>
     <p>The world's most powerful AI driven by God's word. Instant answers to life's toughest questions.</p>
