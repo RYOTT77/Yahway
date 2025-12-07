@@ -21,6 +21,27 @@
             margin: 0 auto;
             padding: 0 1.5rem;
         }
+        @keyframes logoGlow {
+    0% {
+        text-shadow: 0 0 0px rgba(255,255,255,0.25);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 
+            0 0 6px rgba(255,255,255,0.65),
+            0 0 14px rgba(200,200,255,0.55),
+            0 0 24px rgba(255,255,255,0.35);
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255,255,255,0.25);
+        opacity: 0.9;
+    }
+}
+
+.logo-title {
+    animation: logoGlow 3.5s ease-in-out infinite;
+}
 
         /* HEADER */
         header {
