@@ -16,6 +16,16 @@
             line-height: 1.6;
         }
 
+        /* GLOBAL LINK COLOR FIX */
+        a {
+            color: rgba(255,255,255,0.88);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -58,23 +68,10 @@
             font-weight: 800;
         }
 
-        /* GLOW EFFECT ON SUBTITLE */
         @keyframes subtitleGlow {
-            0% {
-                text-shadow: 0 0 0px rgba(255,255,255,0.25);
-                opacity: 0.75;
-            }
-            50% {
-                text-shadow:
-                    0 0 6px rgba(255,255,255,0.75),
-                    0 0 14px rgba(200,200,255,0.6),
-                    0 0 24px rgba(255,255,255,0.35);
-                opacity: 1;
-            }
-            100% {
-                text-shadow: 0 0 0px rgba(255,255,255,0.25);
-                opacity: 0.75;
-            }
+            0% { text-shadow: 0 0 0px rgba(255,255,255,0.25); opacity: 0.75; }
+            50% { text-shadow: 0 0 6px rgba(255,255,255,0.75), 0 0 14px rgba(200,200,255,0.6), 0 0 24px rgba(255,255,255,0.35); opacity: 1; }
+            100% { text-shadow: 0 0 0px rgba(255,255,255,0.25); opacity: 0.75; }
         }
 
         .logo-subtitle {
@@ -94,14 +91,9 @@
 
         .donate-link {
             color: rgba(255, 255, 255, 0.75);
-            text-decoration: none;
             font-size: 0.92rem;
             font-weight: 500;
             transition: 0.2s;
-        }
-
-        .donate-link:hover {
-            color: white;
         }
 
         .btn-primary {
@@ -110,7 +102,6 @@
             padding: 0.65rem 1.8rem;
             border-radius: 9999px;
             font-weight: 600;
-            text-decoration: none;
             cursor: pointer;
             border: none;
             font-size: 0.95rem;
@@ -148,55 +139,29 @@
             pointer-events: none;
         }
 
-        /* HERO TEXT BELOW VIDEO */
         .hero {
             text-align: center;
             padding: 4rem 1.5rem 4rem;
         }
 
-        /* ANIMATIONS */
         @keyframes smoothFadeUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes heavenlyGlow {
-            0%   { text-shadow: 0 0 0px rgba(255,255,255,0.3); opacity: 0.92; }
-            50%  { text-shadow:
-                    0 0 12px rgba(255,255,255,0.85),
-                    0 0 22px rgba(200,200,255,0.6),
-                    0 0 35px rgba(255,255,255,0.4);
-                   opacity: 1; }
-            100% { text-shadow: 0 0 0px rgba(255,255,255,0.3); opacity: 0.92; }
+        /* Removed glow */
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: smoothFadeUp 1s ease-out forwards;
         }
 
-        @keyframes softPulse {
-            0%   { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
-            50%  { box-shadow: 0 0 14px rgba(255,255,255,0.5); }
-            100% { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
-        }
-
-        /* WHISPER APPEAR EFFECT FOR TITLE WORDS */
         @keyframes whisperIn {
-            0% {
-                opacity: 0;
-                transform: translateY(8px) scale(0.98);
-                filter: blur(2px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                filter: blur(0);
-            }
+            0% { opacity: 0; transform: translateY(8px) scale(0.98); filter: blur(2px);}
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
-
-      .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    opacity: 0;
-    animation: smoothFadeUp 1s ease-out forwards; /* Removed glow */
-}
 
         .whisper-line {
             display: inline-flex;
@@ -226,11 +191,10 @@
 
         .hero a {
             opacity: 0;
-            animation: smoothFadeUp 1s ease-out forwards, softPulse 3.5s ease-in-out infinite;
+            animation: smoothFadeUp 1s ease-out forwards;
             animation-delay: 0.8s;
         }
 
-        /* FEATURES, CTA, FOOTER */
         .features, .cta {
             padding: 4rem 1.5rem;
         }
@@ -277,19 +241,13 @@
         }
 
         @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
 <header>
     <div class="header-content">
         <a href="/" class="logo">
@@ -304,7 +262,6 @@
     </div>
 </header>
 
-<!-- SHORT HERO VIDEO -->
 <section class="video-banner">
     <div class="video-wrapper">
         <video autoplay muted loop playsinline id="bg-video">
@@ -314,12 +271,11 @@
     </div>
 </section>
 
-<!-- HERO TEXT BELOW VIDEO -->
 <section class="hero">
     <h1>
         <span class="whisper-line">
-            <span class="whisper-word">Ask Now. </span>
-            <span class="whisper-word">Hear Now. </span>
+            <span class="whisper-word">Ask Now.</span>
+            <span class="whisper-word">Hear Now.</span>
             <span class="whisper-word">Know Now.</span>
         </span>
     </h1>
@@ -327,7 +283,6 @@
     <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Chat Now</a>
 </section>
 
-<!-- FEATURES SECTION -->
 <section class="features">
     <div class="container">
         <div class="features-header">
@@ -336,43 +291,23 @@
         </div>
 
         <div class="features-grid">
-            <div class="feature-card">
-                <h3>Private & Sacred</h3>
-                <p>Your conversations are completely private.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Compassionate</h3>
-                <p>Every answer comes from a place of love and understanding.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Divine Wisdom</h3>
-                <p>Access spiritual insight and biblical counsel anytime.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Always Available</h3>
-                <p>Connect anytime, day or night.</p>
-            </div>
+            <div class="feature-card"><h3>Private & Sacred</h3><p>Your conversations are completely private.</p></div>
+            <div class="feature-card"><h3>Compassionate</h3><p>Every answer comes from a place of love and understanding.</p></div>
+            <div class="feature-card"><h3>Divine Wisdom</h3><p>Access spiritual insight and biblical counsel anytime.</p></div>
+            <div class="feature-card"><h3>Always Available</h3><p>Connect anytime, day or night.</p></div>
         </div>
     </div>
 </section>
 
-<!-- CTA SECTION -->
 <section class="cta">
     <div class="container">
         <div class="cta-box">
-
-            <!-- ❤️ restored heart icon -->
             <div style="display:flex;justify-content:center;margin-bottom:1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8"
-                     width="48" height="48">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8" width="48" height="48">
                     <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.45 1.14-4.125 2.775C11.45 4.89 9.86 3.75 8 3.75 
-                             5.515 3.75 3.5 5.765 3.5 8.25c0 7.22 
-                             8.5 11 8.5 11s8.5-3.78 8.5-11z"/>
+                    d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.45 1.14-4.125 2.775C11.45 4.89 9.86 3.75 8 3.75 
+                    5.515 3.75 3.5 5.765 3.5 8.25c0 7.22 
+                    8.5 11 8.5 11s8.5-3.78 8.5-11z"/>
                 </svg>
             </div>
 
@@ -383,12 +318,10 @@
             <button class="btn-primary" onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2','_blank')">
                 Donate Now
             </button>
-
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-grid">
         <div>
