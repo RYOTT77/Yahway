@@ -132,13 +132,7 @@
             object-fit: cover;
         }
 
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            pointer-events: none;
-        }
-
+        /* HERO TEXT BELOW VIDEO */
         .hero {
             text-align: center;
             padding: 4rem 1.5rem 4rem;
@@ -149,7 +143,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Removed glow */
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -267,7 +260,7 @@
         <video autoplay muted loop playsinline id="bg-video">
             <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
         </video>
-        <div class="video-overlay"></div>
+        <!-- overlay removed -->
     </div>
 </section>
 
