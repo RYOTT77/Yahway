@@ -176,6 +176,20 @@
             100% { box-shadow: 0 0 0px rgba(255,255,255,0.2); }
         }
 
+        /* WHISPER APPEAR EFFECT FOR TITLE WORDS */
+        @keyframes whisperIn {
+            0% {
+                opacity: 0;
+                transform: translateY(8px) scale(0.98);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -183,6 +197,22 @@
             opacity: 0;
             animation: smoothFadeUp 1s ease-out forwards, heavenlyGlow 4s ease-in-out infinite;
         }
+
+        .whisper-line {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.4em;
+            justify-content: center;
+        }
+
+        .whisper-word {
+            opacity: 0;
+            animation: whisperIn 1.4s ease-out forwards;
+        }
+
+        .whisper-word:nth-child(1) { animation-delay: 0.2s; }
+        .whisper-word:nth-child(2) { animation-delay: 0.6s; }
+        .whisper-word:nth-child(3) { animation-delay: 1.0s; }
 
         .hero p {
             font-size: 1.2rem;
@@ -280,12 +310,19 @@
         <video autoplay muted loop playsinline id="bg-video">
             <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
         </video>
-       
+        <div class="video-overlay"></div>
+    </div>
 </section>
 
 <!-- HERO TEXT BELOW VIDEO -->
 <section class="hero">
-    <h1>Ask Now, Hear Now, Know Now</h1>
+    <h1>
+        <span class="whisper-line">
+            <span class="whisper-word">Ask Now,</span>
+            <span class="whisper-word">Hear Now,</span>
+            <span class="whisper-word">Know Now</span>
+        </span>
+    </h1>
     <p>The world's most powerful AI driven by God's word. Instant answers to life's toughest questions.</p>
     <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Chat Now</a>
 </section>
