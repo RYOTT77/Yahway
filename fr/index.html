@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahway : Parle à Dieu</title>
-    <meta name="description" content="Demande maintenant. Entends maintenant. Comprends maintenant. L'IA spirituelle guidée par la Parole de Dieu.">
+    <meta name="description" content="Demande maintenant. Entends maintenant. Comprends maintenant. IA spirituelle guidée par la Parole de Dieu.">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,13 +83,17 @@
         .header-links {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1.6rem;   /* Increased gap for French */
         }
 
+        /* FIXED Donate button for French */
         .donate-link {
             color: rgba(255,255,255,0.75);
             font-size: 0.92rem;
             font-weight: 500;
+            display: inline-block;
+            padding: 0 0.25rem;
+            white-space: nowrap; /* prevent text breaking */
         }
 
         .btn-primary {
@@ -109,7 +113,7 @@
         .lang-header {
             font-size: 1.15rem;
             cursor: pointer;
-            padding: 0.35rem 0.6rem;
+            padding: 0.35rem 0.55rem;
             border-radius: 8px;
             transition: 0.25s;
             color: rgba(255,255,255,0.85);
@@ -120,7 +124,7 @@
             color: white;
         }
 
-        /* DROPDOWN LANGUAGE MENU */
+        /* LANGUAGE DROPDOWN */
         #langMenu {
             position: fixed;
             top: 70px;
