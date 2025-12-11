@@ -113,22 +113,19 @@
             background: #e9e9e9;
         }
 
-        /* HEADER LANGUAGE SELECTOR */
+        /* LANGUAGE SELECTOR */
         .lang-header {
-            font-size: 1.15rem;
             cursor: pointer;
             padding: 0.35rem 0.6rem;
             border-radius: 8px;
             transition: 0.25s;
-            color: rgba(255,255,255,0.85);
         }
 
         .lang-header:hover {
             background: rgba(255,255,255,0.12);
-            color: white;
         }
 
-        /* DROPDOWN MENU */
+        /* DROPDOWN */
         #langMenu {
             position: fixed;
             top: 70px;
@@ -174,7 +171,7 @@
             object-fit: cover;
         }
 
-        /* HERO TEXT */
+        /* HERO */
         .hero {
             text-align: center;
             padding: 4rem 1.5rem 4rem;
@@ -230,7 +227,6 @@
             animation-delay: 0.8s;
         }
 
-        /* FEATURES */
         .features, .cta {
             padding: 4rem 1.5rem;
         }
@@ -253,7 +249,6 @@
             border: 1px solid hsl(220, 15%, 30%);
         }
 
-        /* CTA BOX */
         .cta-box {
             max-width: 52rem;
             margin: 0 auto;
@@ -264,7 +259,6 @@
             border: 1px solid hsl(220, 15%, 30%);
         }
 
-        /* FOOTER */
         footer {
             border-top: 1px solid hsl(220, 15%, 30%);
             padding: 3rem 1.5rem;
@@ -297,15 +291,22 @@
         <div class="header-links">
             <a href="https://yahway.app/donation" class="donate-link">Donate</a>
 
-            <!-- INLINE LANGUAGE ICON -->
-            <div class="lang-header" onclick="toggleLangMenu()">🌐</div>
+            <!-- NEW HOLLOW GLOBE ICON -->
+            <div class="lang-header" onclick="toggleLangMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                </svg>
+            </div>
 
-            <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Download</a>
+            <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Download</a>
         </div>
     </div>
 </header>
 
-<!-- LANGUAGE MENU DROPDOWN -->
+<!-- DROPDOWN -->
 <div id="langMenu">
     <a href="/">English</a>
     <a href="/es/">Español</a>
@@ -332,7 +333,7 @@
         </span>
     </h1>
     <p>The world's most powerful AI driven by God's word. Instant answers to life's toughest questions.</p>
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR" class="btn-primary">Chat Now</a>
+    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chat Now</a>
 </section>
 
 <!-- FEATURES -->
@@ -387,7 +388,7 @@
         <div>
             <h4>Product</h4>
             <ul>
-                <li><a href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR">Download</a></li>
+                <li><a href="https://apps.apple.com/us/app/yahway/id6751845376">Download</a></li>
             </ul>
         </div>
 
@@ -405,7 +406,7 @@
     </div>
 </footer>
 
-<!-- LANGUAGE MENU SCRIPT -->
+<!-- SCRIPT -->
 <script>
 function toggleLangMenu() {
     const menu = document.getElementById("langMenu");
