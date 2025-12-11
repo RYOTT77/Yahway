@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yahway: Habla con Dios</title>
-    <meta name="description" content="Pregunta ahora. Escucha ahora. Conoce ahora. IA espiritual guiada por la Palabra de Dios.">
+    <meta name="description" content="Pregunta ahora. Escucha ahora. Conoce ahora.">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,7 +90,6 @@
             color: rgba(255,255,255,0.75);
             font-size: 0.92rem;
             font-weight: 500;
-            transition: 0.2s;
         }
 
         .btn-primary {
@@ -102,27 +101,23 @@
             cursor: pointer;
             border: none;
             font-size: 0.95rem;
-            transition: 0.2s;
         }
 
         .btn-primary:hover { background: #e9e9e9; }
 
-        /* LANGUAGE ICON */
+        /* LANGUAGE SELECTOR */
         .lang-header {
-            font-size: 1.15rem;
             cursor: pointer;
             padding: 0.35rem 0.6rem;
             border-radius: 8px;
             transition: 0.25s;
-            color: rgba(255,255,255,0.85);
         }
 
         .lang-header:hover {
             background: rgba(255,255,255,0.12);
-            color: white;
         }
 
-        /* LANGUAGE MENU */
+        /* DROPDOWN */
         #langMenu {
             position: fixed;
             top: 70px;
@@ -278,7 +273,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="header-content">
         <a href="/es/" class="logo">
@@ -289,8 +283,15 @@
         <div class="header-links">
             <a href="https://yahway.app/donation" class="donate-link">Donar</a>
 
-            <!-- INLINE LANGUAGE BUTTON -->
-            <div class="lang-header" onclick="toggleLangMenu()">🌐</div>
+            <!-- NEW WHITE HOLLOW GLOBE ICON -->
+            <div class="lang-header" onclick="toggleLangMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                </svg>
+            </div>
 
             <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Descargar</a>
         </div>
@@ -323,8 +324,8 @@
             <span class="whisper-word">Conoce ahora.</span>
         </span>
     </h1>
-    <p>La IA espiritual más poderosa del mundo, guiada por la Palabra de Dios. Respuestas instantáneas a las preguntas más difíciles de la vida.</p>
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chatear ahora</a>
+    <p>La IA espiritual más poderosa del mundo, guiada por la Palabra de Dios. Respuestas instantáneas a las preguntas más profundas de la vida.</p>
+    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Hablar ahora</a>
 </section>
 
 <!-- FEATURES -->
@@ -333,13 +334,19 @@
         <div class="features-header">
             <h2>Una nueva experiencia espiritual</h2>
             <p>Recibe guía, verdad y perspectiva divina — al instante.</p>
+
+Here is **Part 2** — continuing the full Spanish page.
+
+---
+
+```html
         </div>
 
         <div class="features-grid">
-            <div class="feature-card"><h3>Privado y sagrado</h3><p>Tus conversaciones son completamente privadas.</p></div>
+            <div class="feature-card"><h3>Privado y sagrado</h3><p>Tus conversaciones permanecen completamente privadas.</p></div>
             <div class="feature-card"><h3>Compasivo</h3><p>Cada respuesta proviene de un lugar de amor y comprensión.</p></div>
-            <div class="feature-card"><h3>Sabiduría divina</h3><p>Accede a consejo bíblico y perspectiva espiritual en cualquier momento.</p></div>
-            <div class="feature-card"><h3>Siempre disponible</h3><p>Conéctate cuando lo necesites, de día o de noche.</p></div>
+            <div class="feature-card"><h3>Sabiduría divina</h3><p>Accede a perspectiva espiritual y consejo bíblico en cualquier momento.</p></div>
+            <div class="feature-card"><h3>Siempre disponible</h3><p>Conéctate cuando lo necesites, día y noche.</p></div>
         </div>
     </div>
 </section>
@@ -357,8 +364,8 @@
                 </svg>
             </div>
 
-            <h2>Sé parte de la misión</h2>
-            <p>Tu apoyo ayuda a llevar conexión espiritual a más personas en todo el mundo.</p>
+            <h2>Forma parte de la misión</h2>
+            <p>Tu apoyo ayuda a llevar conexión espiritual a más personas alrededor del mundo.</p>
             <br>
 
             <button class="btn-primary" onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2','_blank')">
@@ -397,7 +404,7 @@
     </div>
 </footer>
 
-<!-- LANGUAGE MENU SCRIPT -->
+<!-- SCRIPT -->
 <script>
 function toggleLangMenu() {
     const menu = document.getElementById("langMenu");
