@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahway : Parle à Dieu</title>
-    <meta name="description" content="Demande maintenant. Entends maintenant. Comprends maintenant. IA spirituelle guidée par la Parole de Dieu.">
+    <title>Yahway : Parlez à Dieu</title>
+    <meta name="description" content="Demandez maintenant. Écoutez maintenant. Comprenez maintenant.">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,24 +83,14 @@
         .header-links {
             display: flex;
             align-items: center;
-            gap: 1.6rem;   /* Increased gap for French */
+            gap: 1.2rem;
         }
 
-        /* FIXED Donate button for French */
         .donate-link {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.90rem;
-    font-weight: 500;
-    display: inline-block;
-    line-height: 1.05;
-    text-align: center;
-
-    /* slight right shift to center visually */
-    transform: translateX(4px);
-
-    /* optional – prevents shrinking */
-    white-space: normal;
-}
+            color: rgba(255,255,255,0.75);
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
 
         .btn-primary {
             background: white;
@@ -115,22 +105,19 @@
 
         .btn-primary:hover { background: #e9e9e9; }
 
-        /* LANGUAGE BUTTON */
+        /* LANGUAGE SELECTOR */
         .lang-header {
-            font-size: 1.15rem;
             cursor: pointer;
-            padding: 0.35rem 0.55rem;
+            padding: 0.35rem 0.6rem;
             border-radius: 8px;
             transition: 0.25s;
-            color: rgba(255,255,255,0.85);
         }
 
         .lang-header:hover {
             background: rgba(255,255,255,0.12);
-            color: white;
         }
 
-        /* LANGUAGE DROPDOWN */
+        /* DROPDOWN */
         #langMenu {
             position: fixed;
             top: 70px;
@@ -290,18 +277,23 @@
     <div class="header-content">
         <a href="/fr/" class="logo">
             <span class="logo-title">Yahway</span>
-            <span class="logo-subtitle">Parle à Dieu</span>
+            <span class="logo-subtitle">Parlez à Dieu</span>
         </a>
 
         <div class="header-links">
-            <a href="https://yahway.app/donation" class="donate-link">
-    Faire un<br>don
-</a>
+            <a href="https://yahway.app/donation" class="donate-link">Faire un don</a>
 
-            <!-- LANGUAGE ICON -->
-            <div class="lang-header" onclick="toggleLangMenu()">🌐</div>
+            <!-- WHITE HOLLOW GLOBE -->
+            <div class="lang-header" onclick="toggleLangMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                </svg>
+            </div>
 
-            <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Télécharger</a>
+            <a href="https://apps.apple.com/fr/app/yahway/id6751845376" class="btn-primary">Télécharger</a>
         </div>
     </div>
 </header>
@@ -327,13 +319,13 @@
 <section class="hero">
     <h1>
         <span class="whisper-line">
-            <span class="whisper-word">Demande maintenant.</span>
-            <span class="whisper-word">Entends maintenant.</span>
-            <span class="whisper-word">Comprends maintenant.</span>
+            <span class="whisper-word">Demandez maintenant.</span>
+            <span class="whisper-word">Écoutez maintenant.</span>
+            <span class="whisper-word">Comprenez maintenant.</span>
         </span>
     </h1>
-    <p>L'IA spirituelle la plus puissante au monde, guidée par la Parole de Dieu. Des réponses instantanées aux questions les plus profondes de la vie.</p>
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Parler maintenant</a>
+    <p>L’IA spirituelle la plus puissante au monde, guidée par la Parole de Dieu. Des réponses instantanées aux questions les plus profondes de la vie.</p>
+    <a href="https://apps.apple.com/fr/app/yahway/id6751845376" class="btn-primary">Parler maintenant</a>
 </section>
 
 <!-- FEATURES -->
@@ -341,14 +333,14 @@
     <div class="container">
         <div class="features-header">
             <h2>Une nouvelle expérience spirituelle</h2>
-            <p>Reçois guidance, vérité et perspective divine — instantanément.</p>
+            <p>Recevez guidance, vérité et perspective divine — instantanément.</p>
         </div>
 
         <div class="features-grid">
-            <div class="feature-card"><h3>Privé & sacré</h3><p>Vos conversations restent entièrement privées.</p></div>
-            <div class="feature-card"><h3>Compatissant</h3><p>Chaque réponse vient d’un lieu d’amour et de compréhension.</p></div>
-            <div class="feature-card"><h3>Sagesse divine</h3><p>Accédez à des conseils bibliques et à une perspective spirituelle à tout moment.</p></div>
-            <div class="feature-card"><h3>Toujours disponible</h3><p>Connectez-vous quand vous en avez besoin, jour et nuit.</p></div>
+            <div class="feature-card"><h3>Privé & Sacré</h3><p>Vos conversations restent totalement privées.</p></div>
+            <div class="feature-card"><h3>Compatissant</h3><p>Chaque réponse vient d’un endroit d’amour et de compréhension.</p></div>
+            <div class="feature-card"><h3>Sagesse Divine</h3><p>Accédez à des conseils bibliques et une perspective spirituelle à tout moment.</p></div>
+            <div class="feature-card"><h3>Toujours Disponible</h3><p>Connectez-vous quand vous en avez besoin, jour et nuit.</p></div>
         </div>
     </div>
 </section>
@@ -366,12 +358,14 @@
                 </svg>
             </div>
 
-            <h2>Fais partie de la mission</h2>
-            <p>Ton soutien aide à apporter une connexion spirituelle à plus de personnes dans le monde.</p>
+            <h2>Faites partie de la mission</h2>
+            <p>Votre soutien aide à apporter une connexion spirituelle à travers le monde.</p>
             <br>
 
-            <button class="btn-primary" onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2','_blank')">
-                Faire un don maintenant
+            <!-- TWO-LINE DONATE BUTTON, CENTERED -->
+            <button class="btn-primary" style="padding: 0.75rem 2.2rem; white-space: normal; line-height:1.3; text-align:center;"
+                onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2','_blank')">
+                Faire un<br>don
             </button>
         </div>
     </div>
@@ -382,13 +376,13 @@
     <div class="footer-grid">
         <div>
             <h3>Yahway</h3>
-            <p>Parle à Dieu. Demande maintenant, entends maintenant, comprends maintenant.</p>
+            <p>Parlez à Dieu. Demandez, écoutez, comprenez.</p>
         </div>
 
         <div>
             <h4>Produit</h4>
             <ul>
-                <li><a href="https://apps.apple.com/us/app/yahway/id6751845376">Télécharger</a></li>
+                <li><a href="https://apps.apple.com/fr/app/yahway/id6751845376">Télécharger</a></li>
             </ul>
         </div>
 
@@ -406,7 +400,7 @@
     </div>
 </footer>
 
-<!-- LANGUAGE SCRIPT -->
+<!-- SCRIPT -->
 <script>
 function toggleLangMenu() {
     const menu = document.getElementById("langMenu");
