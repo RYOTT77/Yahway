@@ -86,8 +86,41 @@ header{
 
 /* HERO */
 .hero{text-align:center;padding:4rem 1.5rem}
-.hero h1{font-size:3rem;font-weight:700;margin-bottom:1rem}
-.hero p{font-size:1.2rem;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 2rem}
+
+.hero-title{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+.hero-title span{
+    display:block;
+    opacity:0;
+    transform:translateY(16px);
+    animation:whisperIn .9s ease forwards;
+}
+
+.hero-title span:nth-child(1){animation-delay:.15s}
+.hero-title span:nth-child(2){animation-delay:.45s}
+.hero-title span:nth-child(3){animation-delay:.75s}
+
+@keyframes whisperIn{
+    from{
+        opacity:0;
+        transform:translateY(16px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:rgba(255,255,255,.85);
+    max-width:600px;
+    margin:0 auto 2rem;
+}
 
 /* FEATURES */
 .features,.cta{padding:4rem 1.5rem}
@@ -217,39 +250,24 @@ Donate Now
 </section>
 
 <footer>
-    <div class="footer-grid">
-
-        <!-- BRAND -->
-        <div>
-            <h3>Yahway</h3>
-            <p>Talk to God.</p>
-        </div>
-
-        <!-- PRODUCT -->
-        <div>
-            <h3>Product</h3>
-            <p>
-                <a href="https://apps.apple.com/us/app/yahway/id6751845376" target="_blank">
-                    Download
-                </a>
-            </p>
-        </div>
-
-        <!-- LEGAL -->
-        <div>
-            <h3>Legal</h3>
-            <p>
-                <a href="https://yahway.app/privacy" target="_blank">
-                    Privacy
-                </a>
-            </p>
-        </div>
-
+<div class="footer-grid">
+    <div>
+        <h3>Yahway</h3>
+        <p>Talk to God.</p>
     </div>
-
-    <div style="text-align:center;margin-top:2rem;font-size:.85rem;opacity:.65">
-        © 2025 Yahway. All rights reserved.
+    <div>
+        <h3>Product</h3>
+        <p><a href="https://apps.apple.com/us/app/yahway/id6751845376" target="_blank">Download</a></p>
     </div>
+    <div>
+        <h3>Legal</h3>
+        <p><a href="https://yahway.app/privacy" target="_blank">Privacy</a></p>
+    </div>
+</div>
+
+<div style="text-align:center;margin-top:2rem;font-size:.85rem;opacity:.65">
+© 2025 Yahway. All rights reserved.
+</div>
 </footer>
 
 <script>
