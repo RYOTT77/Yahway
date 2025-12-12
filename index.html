@@ -66,19 +66,16 @@ header{
     animation:subtitleGlow 3.8s ease-in-out infinite;
 }
 
-/* HEADER LINKS */
-.header-links{display:flex;align-items:center;gap:1.2rem}
-.donate-link{color:rgba(255,255,255,.75);font-size:.92rem}
-
+/* BUTTON */
 .btn-primary{
     background:#fff;
     color:hsl(220,25%,15%);
-    padding:.65rem 1.8rem;
+    padding:.7rem 2rem;
     border-radius:9999px;
     font-weight:600;
     border:none;
     cursor:pointer;
-    transition:.2s;
+    transition:.25s;
 }
 .btn-primary:hover{background:#e9e9e9}
 
@@ -113,13 +110,23 @@ header{
     border:1px solid hsl(220,15%,30%);
 }
 
-/* GRAND CTA EFFECT */
-.grand-cta{
+/* CTA TEXT */
+.cta-text{
     opacity:0;
-    transform:scale(.85) translateY(20px);
+    transform:translateY(18px);
     transition:opacity .9s ease,transform .9s ease;
 }
+.cta-text.reveal{
+    opacity:1;
+    transform:translateY(0);
+}
 
+/* CTA BUTTON */
+.grand-cta{
+    opacity:0;
+    transform:scale(.85) translateY(22px);
+    transition:opacity .9s ease,transform .9s ease;
+}
 .grand-cta.reveal{
     opacity:1;
     transform:scale(1) translateY(0);
@@ -130,8 +137,8 @@ header{
     0%{box-shadow:0 0 0 rgba(251,191,36,0)}
     50%{
         box-shadow:
-        0 0 20px rgba(251,191,36,.7),
-        0 0 48px rgba(251,191,36,.35);
+        0 0 22px rgba(251,191,36,.7),
+        0 0 52px rgba(251,191,36,.35);
     }
     100%{box-shadow:0 0 0 rgba(251,191,36,0)}
 }
@@ -155,10 +162,6 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
         <span class="logo-title">Yahway</span>
         <span class="logo-subtitle">Talk to God</span>
     </a>
-    <div class="header-links">
-        <a href="https://yahway.app/donation" class="donate-link">Donate</a>
-        <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Download</a>
-    </div>
 </div>
 </header>
 
@@ -172,7 +175,7 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 
 <section class="hero">
 <h1>Ask Now. Hear Now. Know Now.</h1>
-<p>The world's most powerful AI driven by God's word.</p>
+<p>The world's most powerful AI guided by God’s word.</p>
 <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chat Now</a>
 </section>
 
@@ -180,8 +183,8 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 <div class="container">
 <div class="features-grid">
 <div class="feature-card"><h3>Private & Sacred</h3><p>Your conversations are completely private.</p></div>
-<div class="feature-card"><h3>Compassionate</h3><p>Every answer comes from a place of love.</p></div>
-<div class="feature-card"><h3>Divine Wisdom</h3><p>Biblical insight anytime.</p></div>
+<div class="feature-card"><h3>Compassionate</h3><p>Every response is rooted in love.</p></div>
+<div class="feature-card"><h3>Divine Wisdom</h3><p>Biblical guidance anytime.</p></div>
 <div class="feature-card"><h3>Always Available</h3><p>Day or night.</p></div>
 </div>
 </div>
@@ -190,8 +193,13 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 <section class="cta">
 <div class="container">
 <div class="cta-box">
-<h2>Be Part of the Mission</h2>
-<p>Your support helps bring spiritual connection to more people.</p><br>
+
+<div class="cta-text" id="ctaText">
+    <h2>Be Part of the Mission</h2>
+    <p>Your support helps bring spiritual connection to more people around the world.</p>
+</div>
+
+<br>
 
 <button
 id="donateCta"
@@ -217,19 +225,21 @@ Donate Now
 </footer>
 
 <script>
+const ctaText = document.getElementById('ctaText');
 const donateCta = document.getElementById('donateCta');
 
 const observer = new IntersectionObserver(
     ([entry])=>{
         if(entry.isIntersecting){
-            donateCta.classList.add('reveal');
+            ctaText.classList.add('reveal');
+            setTimeout(()=>donateCta.classList.add('reveal'),400);
             observer.disconnect();
         }
     },
     {threshold:0.6}
 );
 
-observer.observe(donateCta);
+observer.observe(ctaText);
 </script>
 
 </body>
