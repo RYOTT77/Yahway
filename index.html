@@ -237,12 +237,19 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     </a>
 
     <!-- Language globe -->
-    <button class="lang-btn" title="Language">
-        <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
-        </svg>
-    </button>
+   <button class="lang-btn" id="langToggle" title="Language">
+    <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
+    </svg>
+</button>
+
+<div class="lang-menu" id="langMenu">
+    <a href="/" data-lang="en">English</a>
+    <a href="/es" data-lang="es">Español</a>
+    <a href="/fr" data-lang="fr">Français</a>
+    <a href="/pt" data-lang="pt">Português</a>
+</div>
 
     <!-- Download = primary button on right -->
     <a
