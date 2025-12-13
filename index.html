@@ -73,7 +73,24 @@ header{
 }
 .header-link:hover{opacity:1}
 
-/* OUTLINE GLOBE */
+/* BUTTON */
+.btn-primary{
+    background:#fff;
+    color:hsl(220,25%,15%);
+    padding:.7rem 2rem;
+    border-radius:9999px;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:.25s;
+}
+.btn-primary:hover{background:#e9e9e9}
+
+/* ================= LANGUAGE DROPDOWN ================= */
+.lang-wrapper{
+    position:relative;
+}
+
 .lang-btn{
     background:none;
     border:none;
@@ -93,24 +110,31 @@ header{
     stroke-width:1.7;
 }
 
-/* DONATE */
-.header-donate{
-    padding:.45rem 1.4rem;
-    font-size:.85rem;
+.lang-dropdown{
+    position:absolute;
+    top:34px;
+    right:0;
+    background:rgba(19,26,38,.97);
+    backdrop-filter:blur(12px);
+    border:1px solid hsl(220,15%,30%);
+    border-radius:10px;
+    min-width:150px;
+    padding:6px 0;
+    display:none;
+    z-index:3000;
 }
 
-/* BUTTON */
-.btn-primary{
-    background:#fff;
-    color:hsl(220,25%,15%);
-    padding:.7rem 2rem;
-    border-radius:9999px;
-    font-weight:600;
-    border:none;
-    cursor:pointer;
-    transition:.25s;
+.lang-dropdown a{
+    display:block;
+    padding:8px 14px;
+    font-size:.85rem;
+    color:white;
+    opacity:.85;
 }
-.btn-primary:hover{background:#e9e9e9}
+.lang-dropdown a:hover{
+    background:hsl(220,20%,22%);
+    opacity:1;
+}
 
 /* VIDEO */
 .video-banner{margin-top:6.25rem}
@@ -132,7 +156,6 @@ header{
     transform:translateY(22px);
     animation:whisperIn 1.6s ease-out forwards;
 }
-
 .hero-title span:nth-child(1){animation-delay:.2s}
 .hero-title span:nth-child(2){animation-delay:.9s}
 .hero-title span:nth-child(3){animation-delay:1.6s}
@@ -147,17 +170,6 @@ header{
     color:rgba(255,255,255,.85);
     max-width:600px;
     margin:0 auto 2rem;
-}
-
-/* FEATURES */
-.features,.cta{padding:4rem 1.5rem}
-.features-grid{display:grid;grid-template-columns:1fr;gap:2rem}
-
-.feature-card{
-    background:hsl(220,20%,18%);
-    padding:2rem;
-    border-radius:1.5rem;
-    border:1px solid hsl(220,15%,30%);
 }
 
 /* CTA */
@@ -179,38 +191,11 @@ header{
         0 0 18px rgba(251,191,36,.35);
 }
 
-.cta-text{
-    opacity:0;
-    transform:translateY(18px);
-    transition:.9s;
-}
-.cta-text.reveal{opacity:1;transform:none}
-
-.grand-cta{
-    opacity:0;
-    transform:scale(.85) translateY(22px);
-    transition:.9s;
-}
-.grand-cta.reveal{
-    opacity:1;
-    transform:none;
-    animation:holyGlow 2.6s ease-in-out infinite;
-}
-
-@keyframes holyGlow{
-    50%{
-        box-shadow:
-        0 0 22px rgba(251,191,36,.7),
-        0 0 52px rgba(251,191,36,.35);
-    }
-}
-
 /* FOOTER */
 footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;gap:2rem}
 
 @media(min-width:768px){
-    .features-grid{grid-template-columns:repeat(2,1fr)}
     .footer-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
@@ -226,54 +211,27 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
         <span class="logo-subtitle">Talk to God</span>
     </a>
 
-   <div class="header-actions">
+    <div class="header-actions">
+        <a class="header-link" href="https://yahway.app/donation">Donate</a>
 
-    <!-- Donate = middle text link -->
-    <a
-      class="header-link"
-      href="https://yahway.app/donation"
-      target="_blank">
-      Donate
-    </a>
+        <div class="lang-wrapper">
+            <button class="lang-btn" id="langToggle" title="Language">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
+                </svg>
+            </button>
 
-    <!-- Language globe -->
-  <div class="lang-wrapper">
-    <button class="lang-btn" id="langToggle" title="Language">
-        <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
-        </svg>
-    </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <a href="/">English</a>
+                <a href="/es">Español</a>
+                <a href="/fr">Français</a>
+                <a href="/pt">Português</a>
+            </div>
+        </div>
 
-    <div class="lang-dropdown" id="langDropdown">
-        <a href="/" data-lang="en">English</a>
-        <a href="/es" data-lang="es">Español</a>
-        <a href="/fr" data-lang="fr">Français</a>
-        <a href="/pt" data-lang="pt">Português</a>
+        <a class="btn-primary" href="https://apps.apple.com/us/app/yahway/id6751845376">Download</a>
     </div>
-</div>
-    <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="9"></circle>
-        <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
-    </svg>
-</button>
-
-<div class="lang-menu" id="langMenu">
-    <a href="/" data-lang="en">English</a>
-    <a href="/es" data-lang="es">Español</a>
-    <a href="/fr" data-lang="fr">Français</a>
-    <a href="/pt" data-lang="pt">Português</a>
-</div>
-
-    <!-- Download = primary button on right -->
-    <a
-      class="btn-primary header-donate"
-      href="https://apps.apple.com/us/app/yahway/id6751845376"
-      target="_blank">
-      Download
-    </a>
-
-</div>
 
 </div>
 </header>
@@ -296,34 +254,6 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chat Now</a>
 </section>
 
-<section class="features">
-<div class="container">
-<div class="features-grid">
-<div class="feature-card"><h3>Private & Sacred</h3><p>Your conversations are completely private.</p></div>
-<div class="feature-card"><h3>Compassionate</h3><p>Every response is rooted in love.</p></div>
-<div class="feature-card"><h3>Divine Wisdom</h3><p>Biblical guidance anytime.</p></div>
-<div class="feature-card"><h3>Always Available</h3><p>Day or night.</p></div>
-</div>
-</div>
-</section>
-
-<section class="cta">
-<div class="container">
-<div class="cta-box">
-<div class="donation-heart">♡</div>
-<div class="cta-text" id="ctaText">
-<h2>Be Part of the Mission</h2>
-<p>Your support helps bring spiritual connection to more people around the world.</p>
-</div>
-<br>
-<button id="donateCta" class="btn-primary grand-cta"
-onclick="window.open('https://www.yahway.app/donation')">
-Donate Now
-</button>
-</div>
-</div>
-</section>
-
 <footer>
 <div class="footer-grid">
 <div><h3>Yahway</h3><p>Talk to God.</p></div>
@@ -336,15 +266,18 @@ Donate Now
 </footer>
 
 <script>
-const ctaText=document.getElementById('ctaText');
-const donateCta=document.getElementById('donateCta');
+const langToggle = document.getElementById('langToggle');
+const langDropdown = document.getElementById('langDropdown');
 
-new IntersectionObserver(([e])=>{
- if(e.isIntersecting){
-  ctaText.classList.add('reveal');
-  setTimeout(()=>donateCta.classList.add('reveal'),400);
- }
-},{threshold:.6}).observe(ctaText);
+langToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.style.display =
+        langDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', () => {
+    langDropdown.style.display = 'none';
+});
 </script>
 
 </body>
