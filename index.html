@@ -105,14 +105,8 @@ header{
 .hero-title span:nth-child(3){animation-delay:1.6s}
 
 @keyframes whisperIn{
-    from{
-        opacity:0;
-        transform:translateY(22px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    from{opacity:0;transform:translateY(22px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 .hero p{
@@ -141,6 +135,16 @@ header{
     padding:3rem 1.8rem;
     text-align:center;
     border:1px solid hsl(220,15%,30%);
+}
+
+/* HEART ABOVE CTA */
+.donation-heart{
+    font-size:2.4rem;
+    margin-bottom:1rem;
+    color:rgba(255,255,255,.95);
+    text-shadow:
+        0 0 10px rgba(255,255,255,.35),
+        0 0 18px rgba(251,191,36,.35);
 }
 
 /* CTA TEXT */
@@ -230,6 +234,8 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 <section class="cta">
 <div class="container">
 <div class="cta-box">
+
+<div class="donation-heart">♡</div>
 
 <div class="cta-text" id="ctaText">
     <h2>Be Part of the Mission</h2>
