@@ -21,7 +21,7 @@ a:hover{color:#fff}
 
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:fixed;
   top:0;left:0;right:0;
@@ -71,7 +71,7 @@ header{
 
 .btn-primary:hover{background:#e9e9e9}
 
-/* DOWNLOAD DROPDOWN */
+/* ================= DOWNLOAD DROPDOWN ================= */
 .download-wrapper{position:relative}
 
 .download-dropdown{
@@ -93,14 +93,35 @@ header{
   font-size:.9rem;
 }
 
-/* VIDEO */
+/* ================= VIDEO ================= */
 .video-banner{margin-top:6.5rem}
 .video-wrapper{height:28vh;overflow:hidden}
 #bg-video{width:100%;height:100%;object-fit:cover}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{text-align:center;padding:4rem 1.5rem}
-.hero-title{font-size:3rem;font-weight:700;margin-bottom:1rem}
+
+.hero-title{
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
+.hero-title span{
+  display:block;
+  opacity:0;
+  transform:translateY(22px);
+  animation:whisperIn 1.6s ease-out forwards;
+}
+
+.hero-title span:nth-child(1){animation-delay:.2s}
+.hero-title span:nth-child(2){animation-delay:.9s}
+.hero-title span:nth-child(3){animation-delay:1.6s}
+
+@keyframes whisperIn{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
 .hero p{
   font-size:1.2rem;
@@ -109,7 +130,7 @@ header{
   margin:0 auto 1.5rem;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 .features{padding:4rem 1.5rem}
 .features-grid{
   display:grid;
@@ -124,7 +145,7 @@ header{
   border:1px solid hsl(220,15%,30%);
 }
 
-/* ICONS */
+/* ================= ICONS ================= */
 .step-icon{
   width:40px;
   height:40px;
@@ -137,10 +158,13 @@ header{
   stroke:#fff;
   fill:none;
   stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .cta{padding:4rem 1.5rem}
+
 .cta-box{
   max-width:52rem;
   margin:0 auto;
@@ -156,7 +180,38 @@ header{
   margin-bottom:1rem;
 }
 
-/* FOOTER */
+.cta-text{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.9s ease;
+}
+
+.cta-text.reveal{
+  opacity:1;
+  transform:none;
+}
+
+.grand-cta{
+  opacity:0;
+  transform:scale(.85) translateY(22px);
+  transition:.9s ease;
+}
+
+.grand-cta.reveal{
+  opacity:1;
+  transform:none;
+  animation:holyGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes holyGlow{
+  50%{
+    box-shadow:
+      0 0 22px rgba(251,191,36,.7),
+      0 0 52px rgba(251,191,36,.35);
+  }
+}
+
+/* ================= FOOTER ================= */
 footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 .footer-grid{display:grid;gap:2rem;text-align:center}
 
@@ -177,7 +232,6 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     </a>
 
     <div class="header-actions">
-      <!-- DONATION LINK RESTORED -->
       <a class="header-link" href="https://yahway.app/donation">Donate</a>
 
       <div class="download-wrapper">
@@ -200,12 +254,15 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 </section>
 
 <section class="hero">
-  <h1 class="hero-title">Ask Now · Hear Now · Know Now</h1>
+  <h1 class="hero-title">
+    <span>Ask Now</span>
+    <span>Hear Now</span>
+    <span>Know Now</span>
+  </h1>
   <p>The world's most powerful AI driven by God's Word.</p>
   <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chat Now</a>
 </section>
 
-<!-- FEATURES FIRST -->
 <section class="features">
   <div class="container">
     <div class="features-grid">
@@ -217,7 +274,6 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="features">
   <div class="container">
     <h2 style="text-align:center;margin-bottom:2rem">How Yahway Works</h2>
@@ -251,18 +307,20 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
   </div>
 </section>
 
-<!-- DONATION CTA RESTORED -->
 <section class="cta">
   <div class="container">
     <div class="cta-box">
       <div class="donation-heart">♡</div>
-      <h2>Be Part of the Mission</h2>
-      <p>
-        Yahway is a live and active mission today — growing through the support
-        of those who believe in its purpose.
-      </p>
+      <div class="cta-text" id="ctaText">
+        <h2>Be Part of the Mission</h2>
+        <p>
+          Yahway is a live and active mission today — growing through the support
+          of those who believe in its purpose.
+        </p>
+      </div>
       <br>
-      <button class="btn-primary" onclick="window.open('https://yahway.app/donation','_blank')">
+      <button id="donateCta" class="btn-primary grand-cta"
+        onclick="window.open('https://yahway.app/donation','_blank')">
         Donate Now
       </button>
     </div>
@@ -289,6 +347,16 @@ downloadToggle.onclick=e=>{
 };
 
 document.onclick=()=>downloadDropdown.style.display='none';
+
+const ctaText=document.getElementById('ctaText');
+const donateCta=document.getElementById('donateCta');
+
+new IntersectionObserver(([e])=>{
+  if(e.isIntersecting){
+    ctaText.classList.add('reveal');
+    setTimeout(()=>donateCta.classList.add('reveal'),400);
+  }
+},{threshold:.6}).observe(ctaText);
 </script>
 
 </body>
