@@ -71,7 +71,55 @@ header{
 
 .btn-primary:hover{background:#e9e9e9}
 
-/* ================= DOWNLOAD DROPDOWN ================= */
+/* ===== Language Selector ===== */
+.lang-wrapper{position:relative}
+
+.lang-btn{
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  opacity:.85;
+}
+
+.lang-btn:hover{opacity:1}
+
+.lang-btn svg{
+  width:18px;
+  height:18px;
+  stroke:#fff;
+  fill:none;
+  stroke-width:1.7;
+}
+
+.lang-dropdown{
+  position:absolute;
+  top:34px;
+  right:0;
+  background:rgba(19,26,38,.97);
+  backdrop-filter:blur(12px);
+  border:1px solid hsl(220,15%,30%);
+  border-radius:10px;
+  min-width:150px;
+  padding:6px 0;
+  display:none;
+  z-index:2000;
+}
+
+.lang-dropdown a{
+  display:block;
+  padding:8px 14px;
+  font-size:.85rem;
+  opacity:.85;
+}
+
+.lang-dropdown a:hover{
+  background:hsl(220,20%,22%);
+  opacity:1;
+}
+
+/* ===== Download Dropdown ===== */
 .download-wrapper{position:relative}
 
 .download-dropdown{
@@ -234,6 +282,22 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     <div class="header-actions">
       <a class="header-link" href="https://yahway.app/donation">Donate</a>
 
+      <div class="lang-wrapper">
+        <button class="lang-btn" id="langToggle" aria-label="Language selector">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
+          </svg>
+        </button>
+
+        <div class="lang-dropdown" id="langDropdown">
+          <a href="/">English</a>
+          <a href="/es">Español</a>
+          <a href="/fr">Français</a>
+          <a href="/pt">Português</a>
+        </div>
+      </div>
+
       <div class="download-wrapper">
         <button class="btn-primary" id="downloadToggle">Download</button>
         <div class="download-dropdown" id="downloadDropdown">
@@ -306,19 +370,18 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     </div>
   </div>
 </section>
-<p style="text-align:center;">
+
+<p style="text-align:center;font-size:1.2rem;opacity:.85;margin-bottom:2rem;">
   Yahway is a live and active mission today
 </p>
+
 <section class="cta">
   <div class="container">
     <div class="cta-box">
       <div class="donation-heart">♡</div>
       <div class="cta-text" id="ctaText">
         <h2>Be Part of the Mission</h2>
-        <p>
-          Growing through the support
-          of those who believe in its purpose.
-        </p>
+        <p>Growing through the support of those who believe in its purpose.</p>
       </div>
       <br>
       <button id="donateCta" class="btn-primary grand-cta"
@@ -339,19 +402,35 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 </footer>
 
 <script>
-const downloadToggle=document.getElementById('downloadToggle');
-const downloadDropdown=document.getElementById('downloadDropdown');
+/* Download dropdown */
+const downloadToggle = document.getElementById('downloadToggle');
+const downloadDropdown = document.getElementById('downloadDropdown');
 
-downloadToggle.onclick=e=>{
+downloadToggle.addEventListener('click', e => {
   e.stopPropagation();
   downloadDropdown.style.display =
-    downloadDropdown.style.display==='block'?'none':'block';
-};
+    downloadDropdown.style.display === 'block' ? 'none' : 'block';
+});
 
-document.onclick=()=>downloadDropdown.style.display='none';
+/* Language dropdown */
+const langToggle = document.getElementById('langToggle');
+const langDropdown = document.getElementById('langDropdown');
 
-const ctaText=document.getElementById('ctaText');
-const donateCta=document.getElementById('donateCta');
+langToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  langDropdown.style.display =
+    langDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+/* Close on outside click */
+document.addEventListener('click', () => {
+  downloadDropdown.style.display = 'none';
+  langDropdown.style.display = 'none';
+});
+
+/* CTA reveal */
+const ctaText = document.getElementById('ctaText');
+const donateCta = document.getElementById('donateCta');
 
 new IntersectionObserver(([e])=>{
   if(e.isIntersecting){
