@@ -195,6 +195,7 @@ header{
   border:1px solid hsl(220,15%,30%);
 }
 
+/* ===== Icons ===== */
 .step-icon{
   width:40px;
   height:40px;
@@ -226,49 +227,10 @@ header{
 .donation-heart{
   font-size:2.4rem;
   margin-bottom:1rem;
-  text-shadow:0 0 10px rgba(255,255,255,.35),
-              0 0 18px rgba(251,191,36,.35);
-}
-
-.cta-text{
-  opacity:0;
-  transform:translateY(18px);
-  transition:.9s;
-}
-
-.cta-text.reveal{opacity:1;transform:none}
-
-.grand-cta{
-  opacity:0;
-  transform:scale(.85) translateY(22px);
-  transition:.9s;
-}
-
-.grand-cta.reveal{
-  opacity:1;
-  transform:none;
-  animation:holyGlow 2.6s ease-in-out infinite;
-}
-
-@keyframes holyGlow{
-  50%{
-    box-shadow:0 0 22px rgba(251,191,36,.7),
-               0 0 52px rgba(251,191,36,.35);
-  }
-}
-
-/* ================= FOOTER ================= */
-footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
-.footer-grid{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  gap:2rem;
 }
 
 @media(min-width:768px){
   .features-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -285,26 +247,11 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     <div class="header-actions">
       <a class="header-link" href="https://yahway.app/donation">Donate</a>
 
-      <div class="lang-wrapper">
-        <button class="lang-btn" id="langToggle">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
-          </svg>
-        </button>
-        <div class="lang-dropdown" id="langDropdown">
-          <a href="/">English</a>
-          <a href="/es">Español</a>
-          <a href="/fr">Français</a>
-          <a href="/pt">Português</a>
-        </div>
-      </div>
-
       <div class="download-wrapper">
         <button class="btn-primary" id="downloadToggle">Download</button>
         <div class="download-dropdown" id="downloadDropdown">
-          <a href="https://apps.apple.com/us/app/yahway/id6751845376" target="_blank">iOS (App Store)</a>
-          <a href="https://drive.google.com/uc?export=download&id=1B8OipA2LrtrnrlhGMNoP5riqQhH98zO8" target="_blank">Android (Early Access)</a>
+          <a href="https://apps.apple.com/us/app/yahway/id6751845376">iOS (App Store)</a>
+          <a href="https://drive.google.com/uc?export=download&id=1B8OipA2LrtrnrlhGMNoP5riqQhH98zO8">Android (Early Access)</a>
         </div>
       </div>
     </div>
@@ -325,63 +272,10 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     <span>Hear Now</span>
     <span>Know Now</span>
   </h1>
-
   <p>The world's most powerful AI driven by God's Word.</p>
-  <p style="font-size:1rem;opacity:.7;margin-top:.5rem">
-    Trusted by people seeking clarity, comfort, and wisdom — anytime, anywhere.
-  </p>
-
-  <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chat Now</a>
 </section>
 
-<!-- HOW YAHWAY WORKS -->
-<section class="features">
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:2rem">How Yahway Works</h2>
-    <div class="features-grid">
-
-      <div class="feature-card" style="text-align:center">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24">
-            <rect x="7" y="2.5" width="10" height="19" rx="2"></rect>
-            <path d="M12 18h.01"></path>
-            <path d="M4 13.5l3.5-2 2.5 1.5"></path>
-          </svg>
-        </div>
-        <h3>Ask Freely</h3>
-        <p>Share your questions, struggles, or prayers in natural language.</p>
-      </div>
-
-      <div class="feature-card" style="text-align:center">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 7v5"></path>
-            <path d="M9 12h6"></path>
-          </svg>
-        </div>
-        <h3>AI Guided by Scripture</h3>
-        <p>Yahway responds using biblical wisdom, compassion, and context.</p>
-      </div>
-
-      <div class="feature-card" style="text-align:center">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 5h7a3 3 0 0 1 3 3v11H7a3 3 0 0 0-3 3z"></path>
-            <path d="M20 5h-7a3 3 0 0 0-3 3"></path>
-            <path d="M12 2v3"></path>
-            <path d="M9 4l-1.5-1.5"></path>
-            <path d="M15 4l1.5-1.5"></path>
-          </svg>
-        </div>
-        <h3>Reflect & Grow</h3>
-        <p>Receive clarity, peace, and guidance whenever you need it.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+<!-- FEATURES FIRST -->
 <section class="features">
   <div class="container">
     <div class="features-grid">
@@ -393,62 +287,49 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
   </div>
 </section>
 
-<section class="cta">
+<!-- HOW YAHWAY WORKS SECOND -->
+<section class="features">
   <div class="container">
-    <div class="cta-box">
-      <div class="donation-heart">♡</div>
-      <div class="cta-text" id="ctaText">
-        <h2>Be Part of the Mission</h2>
-        <p>Your support helps bring spiritual connection to more people around the world.</p>
+    <h2 style="text-align:center;margin-bottom:2rem">How Yahway Works</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="7" y="2.5" width="10" height="19" rx="2"/>
+            <path d="M12 18h.01"/>
+          </svg>
+        </div>
+        <h3>Ask Freely</h3>
+        <p>Share your questions, struggles, or prayers naturally.</p>
       </div>
-      <br>
-      <button id="donateCta" class="btn-primary grand-cta"
-        onclick="window.open('https://yahway.app/donation','_blank')">
-        Donate Now
-      </button>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5"/>
+            <path d="M9 12h6"/>
+          </svg>
+        </div>
+        <h3>AI Guided by Scripture</h3>
+        <p>Responses shaped by biblical wisdom and compassion.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 5h7a3 3 0 0 1 3 3v11H7a3 3 0 0 0-3 3z"/>
+            <path d="M20 5h-7a3 3 0 0 0-3 3"/>
+          </svg>
+        </div>
+        <h3>Reflect & Grow</h3>
+        <p>Receive clarity, peace, and guidance when you need it.</p>
+      </div>
+
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-grid">
-    <div><h3>Yahway</h3><p>Talk to God.</p></div>
-    <div><h3>Product</h3><p><a href="https://apps.apple.com/us/app/yahway/id6751845376">Download</a></p></div>
-    <div><h3>Legal</h3><p><a href="https://yahway.app/privacy">Privacy</a></p></div>
-  </div>
-  <div style="text-align:center;margin-top:2rem;font-size:.85rem;opacity:.65">
-    © 2025 Yahway. All rights reserved.
-  </div>
-</footer>
-
-<script>
-const langToggle=document.getElementById('langToggle');
-const langDropdown=document.getElementById('langDropdown');
-langToggle.addEventListener('click',e=>{
-  e.stopPropagation();
-  langDropdown.style.display =
-    langDropdown.style.display==='block'?'none':'block';
-});
-document.addEventListener('click',()=>langDropdown.style.display='none');
-
-const downloadToggle=document.getElementById('downloadToggle');
-const downloadDropdown=document.getElementById('downloadDropdown');
-downloadToggle.addEventListener('click',e=>{
-  e.stopPropagation();
-  downloadDropdown.style.display =
-    downloadDropdown.style.display==='block'?'none':'block';
-});
-document.addEventListener('click',()=>downloadDropdown.style.display='none');
-
-const ctaText=document.getElementById('ctaText');
-const donateCta=document.getElementById('donateCta');
-new IntersectionObserver(([e])=>{
-  if(e.isIntersecting){
-    ctaText.classList.add('reveal');
-    setTimeout(()=>donateCta.classList.add('reveal'),400);
-  }
-},{threshold:.6}).observe(ctaText);
-</script>
 
 </body>
 </html>
