@@ -35,13 +35,6 @@ a:hover{color:#fff}
   transform:none;
 }
 
-.divider{
-  height:1px;
-  margin:4rem auto;
-  max-width:800px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
-}
-
 /* ================= HEADER ================= */
 header{
   position:fixed;
@@ -71,7 +64,6 @@ header{
 .logo-title{
   font-size:1.4rem;
   font-weight:800;
-  letter-spacing:-.02em;
 }
 .logo-subtitle{
   font-size:.65rem;
@@ -107,72 +99,33 @@ header{
   box-shadow:0 14px 36px rgba(0,0,0,.45);
 }
 
-/* ================= LANGUAGE SELECTOR ================= */
-.lang-wrapper{position:relative}
+/* ================= DROPDOWNS ================= */
+.lang-wrapper,.download-wrapper{position:relative}
 
-.lang-btn{
-  background:none;
-  border:none;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  opacity:.85;
-}
-.lang-btn:hover{opacity:1}
-
-.lang-btn svg{
-  width:18px;
-  height:18px;
-  stroke:#fff;
-  fill:none;
-  stroke-width:1.7;
-}
-
-.lang-dropdown{
-  position:absolute;
-  top:34px;
-  right:0;
-  background:rgba(19,26,38,.97);
-  backdrop-filter:blur(14px);
-  border:1px solid hsl(220,15%,30%);
-  border-radius:12px;
-  min-width:150px;
-  padding:6px 0;
-  display:none;
-  z-index:2000;
-}
-
-.lang-dropdown a{
-  display:block;
-  padding:8px 14px;
-  font-size:.85rem;
-  opacity:.85;
-}
-.lang-dropdown a:hover{
-  background:hsl(220,20%,22%);
-  opacity:1;
-}
-
-/* ================= DOWNLOAD DROPDOWN ================= */
-.download-wrapper{position:relative}
-
-.download-dropdown{
+.lang-dropdown,.download-dropdown{
   position:absolute;
   top:38px;
   right:0;
   background:rgba(19,26,38,.97);
   border:1px solid hsl(220,15%,30%);
   border-radius:12px;
-  min-width:180px;
+  min-width:160px;
   padding:6px 0;
   display:none;
   z-index:2000;
 }
 
+.lang-dropdown a,
 .download-dropdown a{
   display:block;
   padding:10px 14px;
-  font-size:.9rem;
+  font-size:.85rem;
+  opacity:.85;
+}
+.lang-dropdown a:hover,
+.download-dropdown a:hover{
+  background:hsl(220,20%,22%);
+  opacity:1;
 }
 
 /* ================= VIDEO ================= */
@@ -181,16 +134,12 @@ header{
 #bg-video{width:100%;height:100%;object-fit:cover}
 
 /* ================= HERO ================= */
-.hero{
-  text-align:center;
-  padding:4rem 1.5rem;
-}
+.hero{text-align:center;padding:4rem 1.5rem}
 
 .hero-title{
   font-size:3rem;
   font-weight:700;
   margin-bottom:1rem;
-  letter-spacing:-.02em;
 }
 
 .hero-title span{
@@ -205,8 +154,7 @@ header{
 .hero-title span:nth-child(3){animation-delay:1.6s}
 
 @keyframes whisperIn{
-  from{opacity:0;transform:translateY(22px)}
-  to{opacity:1;transform:translateY(0)}
+  to{opacity:1;transform:none}
 }
 
 .hero p{
@@ -218,7 +166,6 @@ header{
 
 /* ================= FEATURES ================= */
 .features{padding:4rem 1.5rem}
-
 .features-grid{
   display:grid;
   grid-template-columns:1fr;
@@ -231,23 +178,12 @@ header{
   padding:2rem;
   border-radius:1.5rem;
   border:1px solid rgba(255,255,255,.08);
-  transition:all .3s ease;
+  transition:.3s ease;
 }
 
 .feature-card:hover{
   transform:translateY(-4px);
   box-shadow:0 18px 40px rgba(0,0,0,.45);
-}
-
-/* ================= ICONS ================= */
-.step-icon{
-  width:42px;
-  height:42px;
-  margin:0 auto 1rem;
-  transition:transform .3s ease;
-}
-.feature-card:hover .step-icon{
-  transform:scale(1.08);
 }
 
 /* ================= CTA ================= */
@@ -269,6 +205,18 @@ header{
   margin-bottom:1rem;
 }
 
+/* text first */
+.cta-text{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.9s ease;
+}
+.cta-text.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* button second */
 .grand-cta{
   opacity:0;
   transform:scale(.85) translateY(22px);
@@ -323,28 +271,10 @@ footer a:hover{opacity:1}
     <div class="header-actions">
       <a class="header-link" href="https://yahway.app/donation">Donate</a>
 
-      <div class="lang-wrapper">
-        <button class="lang-btn" id="langToggle">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
-          </svg>
-        </button>
-
-        <div class="lang-dropdown" id="langDropdown">
-          <a href="/">English</a>
-          <a href="/es">Español</a>
-          <a href="/fr">Français</a>
-          <a href="/pt">Português</a>
-        </div>
-      </div>
-
-      <div class="download-wrapper">
-        <button class="btn-primary" id="downloadToggle">Download</button>
-        <div class="download-dropdown" id="downloadDropdown">
-          <a href="https://apps.apple.com/us/app/yahway/id6751845376">iOS (App Store)</a>
-          <a href="https://drive.google.com/uc?export=download&id=1B8OipA2LrtrnrlhGMNoP5riqQhH98zO8">Android (Early Access)</a>
-        </div>
+      <button class="btn-primary" id="downloadToggle">Download</button>
+      <div class="download-dropdown" id="downloadDropdown">
+        <a href="https://apps.apple.com/us/app/yahway/id6751845376">iOS</a>
+        <a href="#">Android (Early)</a>
       </div>
     </div>
   </div>
@@ -379,17 +309,18 @@ footer a:hover{opacity:1}
   </div>
 </section>
 
-<p style="text-align:center;font-size:1.2rem;opacity:.85;margin-bottom:2rem;">
-  Yahway is a live and active mission today
-</p>
-
 <section class="cta">
   <div class="container">
-    <div class="cta-box reveal">
+    <div class="cta-box">
       <div class="donation-heart">♡</div>
-      <h2>Be Part of the Mission</h2>
-      <p>Growing through the support of those who believe in its purpose.</p>
+
+      <div class="cta-text reveal" id="ctaText">
+        <h2>Be Part of the Mission</h2>
+        <p>Growing through the support of those who believe in its purpose.</p>
+      </div>
+
       <br>
+
       <button id="donateCta" class="btn-primary grand-cta"
         onclick="window.open('https://yahway.app/donation','_blank')">
         Donate Now
@@ -401,25 +332,29 @@ footer a:hover{opacity:1}
 <footer>
   <div class="footer-grid">
     <div><h3>Yahway</h3><p>Talk to God.</p></div>
-    <div><h3>Product</h3><p><a href="https://apps.apple.com/us/app/yahway/id6751845376">Download</a></p></div>
+    <div><h3>Product</h3><p><a href="#">Download</a></p></div>
     <div><h3>Legal</h3><p><a href="https://yahway.app/privacy">Privacy</a></p></div>
   </div>
   <div style="text-align:center;margin-top:2rem;opacity:.65">© 2025 Yahway</div>
 </footer>
 
 <script>
-/* Scroll reveal */
+/* Scroll reveal + CTA timing */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("visible");
+
+      if(entry.target.id==="ctaText"){
+        setTimeout(()=>{
+          document.getElementById("donateCta").classList.add("reveal");
+        },400);
+      }
     }
   });
-},{threshold:.15});
+},{threshold:.6});
 
-document.querySelectorAll(".reveal,.grand-cta").forEach(el=>{
-  observer.observe(el);
-});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
 /* Download dropdown */
 downloadToggle.onclick=e=>{
@@ -428,16 +363,8 @@ downloadToggle.onclick=e=>{
     downloadDropdown.style.display==="block"?"none":"block";
 };
 
-/* Language dropdown */
-langToggle.onclick=e=>{
-  e.stopPropagation();
-  langDropdown.style.display =
-    langDropdown.style.display==="block"?"none":"block";
-};
-
 document.addEventListener("click",()=>{
   downloadDropdown.style.display="none";
-  langDropdown.style.display="none";
 });
 </script>
 
