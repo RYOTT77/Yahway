@@ -273,6 +273,45 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
   .features-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:repeat(4,1fr)}
 }
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  padding:4.5rem 1.5rem;
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.testimonials-title{
+  text-align:center;
+  font-size:1.6rem;
+  font-weight:600;
+  margin-bottom:2.5rem;
+  opacity:.9;
+}
+
+.testimonial{
+  max-width:680px;
+  margin:0 auto 1.8rem;
+  text-align:center;
+}
+
+.testimonial p{
+  font-size:1.15rem;
+  line-height:1.7;
+  opacity:.85;
+  min-height:2.5em;
+}
+
+.type-text::after{
+  content:"▍";
+  margin-left:4px;
+  opacity:.7;
+  animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0}
+}
 </style>
 </head>
 
