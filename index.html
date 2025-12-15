@@ -562,23 +562,28 @@ new IntersectionObserver(([e])=>{
 <script>
 const typeElements = document.querySelectorAll(".type-text");
 
-const typeText = (el, delay = 0) => {
+const typeText = (el) => {
   const text = el.dataset.text;
   el.textContent = "";
   let i = 0;
 
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      el.textContent += text.charAt(i);
-      i++;
-      if (i >= text.length) clearInterval(interval);
-    }, 28);
-  }, delay);
+  const interval = setInterval(() => {
+    el.textContent += text.charAt(i);
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, 28);
 };
 
-typeElements.forEach((el, index) => {
-  typeText(el, index * 1200);
-});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.typed) {
+      entry.target.dataset.typed = "true";
+      typeText(entry.target);
+    }
+  });
+},{ threshold: 0.4 });
+
+typeElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
