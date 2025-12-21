@@ -81,16 +81,35 @@ body {
   color: rgba(255,255,255,0.6);
 }
 
-.footer {
+.android {
   margin-top: 3rem;
+}
+
+.android-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e6c87a;
+  margin-bottom: 0.75rem;
+}
+
+.android-note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer {
+  margin-top: 3.5rem;
   font-size: 0.85rem;
   color: rgba(255,255,255,0.4);
 }
+</style>
+
+<!-- ✅ GIVEBUTTER WIDGET SCRIPT (CORRECT PLACEMENT) -->
 <script
   async
   src="https://widgets.givebutter.com/latest.umd.cjs?acct=cW7g3nEX00o0rTYI&p=other">
 </script>
-
 
 </head>
 
@@ -110,29 +129,29 @@ body {
       Ask life’s hardest questions and receive trusted guidance from Scripture
     </p>
 
-    <!-- 🔽 CHANGE LINKS BELOW -->
     <a class="cta" href="https://apps.apple.com/" target="_blank">
       Download Yahway
     </a>
 
-   <div class="secondary">
-  Available on iOS
-</div>
+    <div class="secondary">
+      Available on iOS
+    </div>
 
-<div style="margin-top:3rem;">
-  <div style="color:#e6c87a;font-weight:600;margin-bottom:0.75rem;">
-    Coming soon to Android
-  </div>
+    <!-- ANDROID WAITLIST -->
+    <div class="android">
+      <div class="android-title">
+        Coming soon to Android
+      </div>
 
-  <givebutter-widget
-    widget-type="signup"
-    widget-id="paZ2Wj">
-  </givebutter-widget>
+      <givebutter-widget
+        widget-type="signup"
+        widget-id="paZ2Wj">
+      </givebutter-widget>
 
-  <div style="margin-top:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.5);">
-    Be notified when Yahway launches on Android
-  </div>
-</div>
+      <div class="android-note">
+        Be notified when Yahway launches on Android
+      </div>
+    </div>
 
     <div class="footer">
       © Yahway • Truth Preserved
