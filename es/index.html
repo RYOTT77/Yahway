@@ -102,6 +102,36 @@
             border: none;
             font-size: 0.95rem;
         }
+        <style>
+/* STORE BUTTONS */
+.store-buttons {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.btn-store {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: white;
+    color: hsl(220, 25%, 15%);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-store svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-store:hover {
+    background: #e9e9e9;
+}
+</style>
 
         .btn-primary:hover { background: #e9e9e9; }
 
@@ -281,7 +311,23 @@
         </a>
 
         <div class="header-links">
-            <a href="https://yahway.app/donation" class="donate-link">Donar</a>
+<div class="store-buttons">
+    <!-- iOS -->
+    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-store">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor">
+            <path d="M318.7 268.6c-.3-44.9 36.7-66.4 38.4-67.5-21-30.7-53.7-34.9-65.2-35.4-27.8-2.8-54.2 16.3-68.3 16.3-14.1 0-36-15.9-59.1-15.5-30.4.4-58.4 17.7-74 44.9-31.6 54.8-8.1 136 22.7 180.5 15.1 21.8 33.1 46.3 56.7 45.4 22.8-.9 31.4-14.8 58.9-14.8s35.2 14.8 59.1 14.4c24.4-.4 39.8-22.3 54.8-44.2 17.4-25.4 24.6-50 25-51.3-.5-.2-48-18.4-48.3-73z"/>
+        </svg>
+        iOS
+    </a>
+
+    <!-- Android -->
+    <a href="https://play.google.com/store/apps/details?id=com.yahway.app" class="btn-store">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
+            <path d="M420.6 66.7L421.1 66.4 386.6 0 354.4 17.1l34.5 66.4c-29.5 12.4-63.3 19.7-100.9 19.7s-71.4-7.3-100.9-19.7L221.6 17.1 189.4 0 154.9 66.4l.5.3C98.8 93.3 64 139.6 64 192v160c0 17.7 14.3 32 32 32h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32v-96h192v96c0 17.7 14.3 32 32 32s32-14.3 32-32v-96h32c17.7 0 32-14.3 32-32V192c0-52.4-34.8-98.7-91.4-125.3z"/>
+        </svg>
+        Android
+    </a>
+</div>
 
             <!-- NEW WHITE HOLLOW GLOBE ICON -->
             <div class="lang-header" onclick="toggleLangMenu()">
