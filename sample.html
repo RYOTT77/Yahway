@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahway — Talk to God</title>
+  <meta name="description" content="Ask. Hear. Know. Yahway is your spiritual AI companion rooted in Scripture, available anytime." />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
@@ -89,6 +90,37 @@
       font-size: inherit;
     }
 
+    .features {
+      margin-top: 4.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .feature h3 {
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature p {
+      color: var(--white-muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 5rem;
+      font-size: 0.85rem;
+      color: var(--white-muted);
+    }
+
     /* MODAL */
     .modal {
       display: none;
@@ -105,31 +137,26 @@
       border-radius: 18px;
       max-width: 560px;
       width: 92%;
-      padding: 0;
-      overflow: hidden;
+      padding: 1.5rem;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .modal-header {
-      padding: 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .modal-header h2 {
+    .modal-content h2 {
       margin-bottom: 0.4rem;
     }
 
-    .modal-header p {
+    .modal-content p {
       color: var(--white-muted);
       font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     iframe {
       width: 100%;
-      height: 320px;
+      height: 305px;
       border: none;
-      display: block;
+      border-radius: 12px;
+      background: #fff;
     }
   </style>
 </head>
@@ -138,11 +165,12 @@
 
 <main>
   <h1>Yahway</h1>
-  <div class="tagline">Talk to God</div>
+  <div class="tagline">Talk to God. Anytime.</div>
 
   <p class="impact">
     Ask life’s hardest questions. Receive Scripture-rooted guidance.
-    Yahway is your spiritual AI companion — calm, private, and always present.
+    Yahway is your spiritual AI companion — calm, private, and always present
+    when you need clarity, peace, or direction.
   </p>
 
   <a class="cta" href="https://apps.apple.com/us/app/yahway/id6751845376">
@@ -153,17 +181,34 @@
     Android coming soon —
     <button onclick="openModal()">get notified</button>
   </div>
+
+  <!-- ✅ FEATURES BACK -->
+  <section class="features">
+    <div class="feature">
+      <h3>Scripture-Aligned</h3>
+      <p>Responses grounded in biblical truth — not opinions or trends.</p>
+    </div>
+    <div class="feature">
+      <h3>Private & Safe</h3>
+      <p>Your conversations stay confidential. No judgment. No exposure.</p>
+    </div>
+    <div class="feature">
+      <h3>Always Available</h3>
+      <p>Guidance and comfort 24/7, wherever life takes you.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Yahway · Truth Preserved
+  </footer>
 </main>
 
-<!-- MODAL -->
+<!-- ✅ MODAL WITH WORKING BREVO FORM -->
 <div class="modal" id="notifyModal" onclick="closeModal(event)">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Android Launch</h2>
-      <p>Be the first to know when Yahway arrives on Android.</p>
-    </div>
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h2>Android Launch</h2>
+    <p>Be the first to know when Yahway arrives on Android.</p>
 
-    <!-- ✅ YOUR WORKING BREVO FORM -->
     <iframe
       src="https://9c62924b.sibforms.com/serve/MUIFAEkqBr1xoFq-9tWBRMeznJXSe0ywhHQNAit9MJZCllHQhPqNNCFi3atBxnVQVkiGGovthH0lKfUX2emHw5E9AsyeEd3S6oRmizZrQotW3D9fPKzVl6yd8OaKOHfs9P_DdLhvta-HIIDPKUsluXyGPy6b16CX5M8-6U_QYZTQAtYHpX83Abc_Atrcv8pEkFvE1ND-LX0f-mvRog==">
     </iframe>
