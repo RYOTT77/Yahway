@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahway — Talk to God</title>
+  <meta name="description" content="Ask. Hear. Know. Yahway is your spiritual AI companion rooted in Scripture, available anytime." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #f5c77a;
+      --deep-blue: #0b1020;
+      --soft-blue: #121a35;
+      --text-muted: rgba(255,255,255,0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1b2555, var(--deep-blue));
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Subtle animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.15), transparent),
+        radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,0.12), transparent),
+        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.1), transparent);
+      animation: float 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-80px); }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      color: var(--gold);
+    }
+
+    .impact {
+      max-width: 680px;
+      margin: 0 auto 2.75rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffd27d, #f5b942);
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 1rem 2.4rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 12px 35px rgba(245,185,66,0.35);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(245,185,66,0.45);
+    }
+
+    .platform-note {
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .platform-note button {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: inherit;
+    }
+
+    .features {
+      margin-top: 4.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .feature h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      color: var(--gold);
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 5rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .modal-content {
+      background: #121a35;
+      padding: 2.5rem;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .modal-content button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--gold);
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Yahway</h1>
+    <div class="tagline">Talk to God. Anytime.</div>
+
+    <p class="impact">
+      Ask life’s hardest questions. Receive Scripture-rooted guidance.
+      Yahway is your spiritual AI companion — calm, private, and always present
+      when you need clarity, peace, or direction.
+    </p>
+
+    <a class="cta" href="https://apps.apple.com/us/app/yahway/id6751845376">
+      📥 Download on the App Store
+    </a>
+
+    <div class="platform-note">
+      Android coming soon —
+      <button onclick="openModal()">get notified</button>
+    </div>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Scripture-Aligned</h3>
+        <p>Responses grounded in biblical truth — not opinions or trends.</p>
+      </div>
+      <div class="feature">
+        <h3>Private & Safe</h3>
+        <p>Your conversations stay confidential. No judgment. No exposure.</p>
+      </div>
+      <div class="feature">
+        <h3>Always Available</h3>
+        <p>Guidance and comfort 24/7, wherever life takes you.</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Yahway · Truth Preserved
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="notifyModal">
+    <div class="modal-content">
+      <h2>Android Launch</h2>
+      <p>Be the first to know when Yahway arrives on Android.</p>
+      <input type="email" placeholder="Your email address" />
+      <button onclick="closeModal()">Notify Me</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('notifyModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('notifyModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
