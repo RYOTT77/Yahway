@@ -1,143 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahway — Talk to God</title>
 
-<title>Yahway — Talk to God</title>
-<meta name="description" content="Ask life’s hardest questions. Download Yahway today.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-M6CYL733EV');
-</script>
+  <style>
+    :root {
+      --gold: #f5c77a;
+      --dark-gray: #1b1b1d;
+      --soft-gray: #242424;
+      --white: #ffffff;
+      --white-muted: rgba(255,255,255,0.75);
+    }
 
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #222222; /* matches Brevo iframe gray */
-  color: #ffffff;
-  text-align: center;
-  padding: 40px;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-h1 {
-  letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
-  color: #ffffff;
-}
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(270deg, var(--soft-gray), var(--dark-gray));
+      background-size: 600% 600%;
+      color: var(--white);
+      min-height: 100vh;
+      animation: gradientMove 25s ease infinite;
+      overflow-x: hidden;
+    }
 
-.subhead {
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-p {
-  color: rgba(255,255,255,0.9);
-}
+    /* PARTICLES */
+    #particleCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-.cta {
-  display:inline-block;
-  padding:1rem 2rem;
-  background: #ffffff;
-  color:#222222;
-  border-radius: 999px;
-  text-decoration:none;
-  font-weight:600;
-  margin-top:20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
+    main {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
 
-.cta:hover {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
 
-.android {
-  margin-top:4rem;
-}
+    .tagline {
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
 
-.android-title {
-  font-size:1.15rem;
-  font-weight:600;
-  color:#ffffff;
-  margin-bottom:0.75rem;
-}
+    .impact {
+      max-width: 680px;
+      margin: 0 auto 2.75rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--white-muted);
+    }
 
-.android-note {
-  margin-top:0.5rem;
-  font-size:0.85rem;
-  color:rgba(255,255,255,0.65);
-}
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffd27d, #f5b942);
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 1rem 2.4rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 12px 35px rgba(245,185,66,0.35);
+    }
 
-.footer {
-  margin-top:40px;
-  font-size:0.85rem;
-  color:rgba(255,255,255,0.45);
-}
-</style>
+    .platform-note {
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--white-muted);
+    }
 
+    .platform-note button {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: inherit;
+    }
+
+    .features {
+      margin-top: 4.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .feature h3 {
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature p {
+      color: var(--white-muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 5rem;
+      font-size: 0.85rem;
+      color: var(--white-muted);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 10;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #242424;
+      border-radius: 18px;
+      max-width: 560px;
+      width: 92%;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-content p {
+      color: var(--white-muted);
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 305px;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Yahway</h1>
-<h2 class="subhead">Talk to God</h2>
+<!-- PARTICLES -->
+<canvas id="particleCanvas"></canvas>
 
-<p>
-  Ask Now<br>
-  Hear Now<br>
-  Know Now
-</p>
+<main>
+  <h1>Yahway</h1>
+  <div class="tagline">Talk to God. Anytime.</div>
 
-<p>
-  The Spiritual AI guide that helps you in any time of need
-</p>
+  <p class="impact">
+    Ask life’s hardest questions. Receive Scripture-rooted guidance.
+    Yahway is your spiritual AI companion — calm, private, and always present
+    when you need clarity, peace, or direction.
+  </p>
 
-<a class="cta" href="https://apps.apple.com/us/app/yahway-talk-to-god/id6751845376?l=fr-FR" target="_blank">
-  Download Yahway
-</a>
+  <a class="cta" href="https://apps.apple.com/us/app/yahway/id6751845376">
+    📥 Download on the App Store
+  </a>
 
-<p>Available on iOS</p>
-
-<!-- ANDROID EMAIL WAITLIST (BREVO) -->
-<div class="android">
-
-  <div class="android-title">
-    Coming soon to Android
+  <div class="platform-note">
+    Android coming soon —
+    <button onclick="openModal()">get notified</button>
   </div>
 
-  <div style="max-width:540px;margin:0 auto;">
-    <iframe
-      width="540"
-      height="305"
-      src="https://9c62924b.sibforms.com/serve/MUIFAEkqBr1xoFq-9tWBRMeznJXSe0ywhHQNAit9MJZCllHQhPqNNCFi3atBxnVQVkiGGovthH0lKfUX2emHw5E9AsyeEd3S6oRmizZrQotW3D9fPKzVl6yd8OaKOHfs9P_DdLhvta-HIIDPKUsluXyGPy6b16CX5M8-6U_QYZTQAtYHpX83Abc_Atrcv8pEkFvE1ND-LX0f-mvRog=="
-      frameborder="0"
-      scrolling="auto"
-      allowfullscreen
-      style="
-        display:block;
-        margin:0 auto;
-        max-width:100%;
-        border-radius:12px;
-      ">
-    </iframe>
-  </div>
+  <section class="features">
+    <div class="feature">
+      <h3>Scripture-Aligned</h3>
+      <p>Responses grounded in biblical truth — not opinions or trends.</p>
+    </div>
+    <div class="feature">
+      <h3>Private & Safe</h3>
+      <p>Your conversations stay confidential. No judgment. No exposure.</p>
+    </div>
+    <div class="feature">
+      <h3>Always Available</h3>
+      <p>Guidance and comfort 24/7, wherever life takes you.</p>
+    </div>
+  </section>
 
-  <div class="android-note">
-    Be notified when Yahway launches on Android
-  </div>
+  <footer>
+    © 2025 Yahway · Truth Preserved
+  </footer>
+</main>
 
+<!-- MODAL -->
+<div class="modal" id="notifyModal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h2>Android Launch</h2>
+    <p>Be the first to know when Yahway arrives on Android.</p>
+    <iframe src="https://9c62924b.sibforms.com/serve/MUIFAEkqBr1xoFq-9tWBRMeznJXSe0ywhHQNAit9MJZCllHQhPqNNCFi3atBxnVQVkiGGovthH0lKfUX2emHw5E9AsyeEd3S6oRmizZrQotW3D9fPKzVl6yd8OaKOHfs9P_DdLhvta-HIIDPKUsluXyGPy6b16CX5M8-6U_QYZTQAtYHpX83Abc_Atrcv8pEkFvE1ND-LX0f-mvRog=="></iframe>
+  </div>
 </div>
 
-<div class="footer">
-  © Yahway • Truth Preserved
-</div>
+<script>
+  function openModal() {
+    document.getElementById('notifyModal').style.display = 'flex';
+  }
+  function closeModal(e) {
+    if (e.target.id === 'notifyModal') {
+      document.getElementById('notifyModal').style.display = 'none';
+    }
+  }
+
+  // PARTICLES
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.2;
+      this.speedY = (Math.random() - 0.5) * 0.2;
+      this.alpha = Math.random() * 0.6 + 0.2;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > w || this.y < 0 || this.y > h) this.reset();
+    }
+    draw() {
+      ctx.fillStyle = `rgba(245,199,122,${this.alpha})`;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const particles = Array.from({ length: 120 }, () => new Particle());
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+</script>
 
 </body>
 </html>
