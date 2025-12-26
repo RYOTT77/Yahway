@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahway — Talk to God</title>
-  <meta name="description" content="Ask. Hear. Know. Yahway is your spiritual AI companion rooted in Scripture, available anytime." />
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -18,11 +16,7 @@
       --white-muted: rgba(255,255,255,0.75);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -30,41 +24,33 @@
       background-size: 600% 600%;
       color: var(--white);
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      animation: gradientMove 25s ease infinite;
     }
 
-    /* Gradient animation */
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    body {
-      animation: gradientMove 25s ease infinite;
-    }
 
     main {
-      position: relative;
-      z-index: 2;
       max-width: 1100px;
       margin: 0 auto;
       padding: 5rem 1.5rem 4rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
       font-size: clamp(2.6rem, 5vw, 4rem);
       font-weight: 800;
-      letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
 
     .tagline {
       font-size: 1.35rem;
-      font-weight: 500;
       margin-bottom: 1.25rem;
-      color: var(--white);
     }
 
     .impact {
@@ -85,12 +71,6 @@
       border-radius: 12px;
       text-decoration: none;
       box-shadow: 0 12px 35px rgba(245,185,66,0.35);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(245,185,66,0.45);
     }
 
     .platform-note {
@@ -109,152 +89,84 @@
       font-size: inherit;
     }
 
-    .features {
-      margin-top: 4.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .feature h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-      color: var(--gold);
-    }
-
-    .feature p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--white-muted);
-    }
-
-    footer {
-      margin-top: 5rem;
-      font-size: 0.85rem;
-      color: var(--white-muted);
-    }
-
-    /* Modal */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.65);
+      z-index: 20;
       align-items: center;
       justify-content: center;
-      z-index: 10;
     }
 
     .modal-content {
       background: #242424;
-      padding: 2.5rem;
       border-radius: 18px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
+      max-width: 560px;
+      width: 92%;
+      padding: 0;
+      overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .modal-content h2 {
-      margin-bottom: 0.75rem;
+    .modal-header {
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .modal-content p {
+    .modal-header h2 {
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-header p {
       color: var(--white-muted);
+      font-size: 0.95rem;
     }
 
-    .modal-content input {
+    iframe {
       width: 100%;
-      padding: 0.9rem;
-      border-radius: 8px;
+      height: 320px;
       border: none;
-      margin-top: 1rem;
-      font-size: 1rem;
-      background: #2c2c2c;
-      color: white;
+      display: block;
     }
-
-    .modal-content button {
-      margin-top: 1rem;
-      width: 100%;
-      padding: 0.9rem;
-      border-radius: 8px;
-      border: none;
-      background: var(--gold);
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    /* Canvas for particle animation */
-    #particleCanvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
   </style>
 </head>
 
 <body>
-  <!-- Particle canvas -->
-  <canvas id="particleCanvas"></canvas>
 
-  <main>
-    <h1>Yahway</h1>
-    <div class="tagline">Talk to God. Anytime.</div>
+<main>
+  <h1>Yahway</h1>
+  <div class="tagline">Talk to God. Anytime.</div>
 
-    <p class="impact">
-      Ask life’s hardest questions. Receive Scripture-rooted guidance.
-      Yahway is your spiritual AI companion — calm, private, and always present
-      when you need clarity, peace, or direction.
-    </p>
+  <p class="impact">
+    Ask life’s hardest questions. Receive Scripture-rooted guidance.
+    Yahway is your spiritual AI companion — calm, private, and always present.
+  </p>
 
-    <a class="cta" href="https://apps.apple.com/us/app/yahway/id6751845376">
-      📥 Download on the App Store
-    </a>
+  <a class="cta" href="https://apps.apple.com/us/app/yahway/id6751845376">
+    📥 Download on the App Store
+  </a>
 
-    <div class="platform-note">
-      Android coming soon —
-      <button onclick="openModal()">get notified</button>
+  <div class="platform-note">
+    Android coming soon —
+    <button onclick="openModal()">get notified</button>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="notifyModal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Android Launch</h2>
+      <p>Be the first to know when Yahway arrives on Android.</p>
     </div>
 
-    <section class="features">
-      <div class="feature">
-        <h3>Scripture-Aligned</h3>
-        <p>Responses grounded in biblical truth — not opinions or trends.</p>
-      </div>
-      <div class="feature">
-        <h3>Private & Safe</h3>
-        <p>Your conversations stay confidential. No judgment. No exposure.</p>
-      </div>
-      <div class="feature">
-        <h3>Always Available</h3>
-        <p>Guidance and comfort 24/7, wherever life takes you.</p>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Yahway · Truth Preserved
-    </footer>
-  </main>
-
-  <!-- Modal -->
-<div class="modal" id="notifyModal">
-  <div class="modal-content">
-    <h2>Android Launch</h2>
-    <p>Be the first to know when Yahway arrives on Android.</p>
-    <input type="email" id="emailInput" placeholder="Your email address" />
-    <button onclick="submitEmail()">Notify Me</button>
+    <!-- ✅ YOUR WORKING BREVO FORM -->
+    <iframe
+      src="https://9c62924b.sibforms.com/serve/MUIFAEkqBr1xoFq-9tWBRMeznJXSe0ywhHQNAit9MJZCllHQhPqNNCFi3atBxnVQVkiGGovthH0lKfUX2emHw5E9AsyeEd3S6oRmizZrQotW3D9fPKzVl6yd8OaKOHfs9P_DdLhvta-HIIDPKUsluXyGPy6b16CX5M8-6U_QYZTQAtYHpX83Abc_Atrcv8pEkFvE1ND-LX0f-mvRog==">
+    </iframe>
   </div>
 </div>
 
@@ -262,98 +174,13 @@
   function openModal() {
     document.getElementById('notifyModal').style.display = 'flex';
   }
-  function closeModal() {
-    document.getElementById('notifyModal').style.display = 'none';
-  }
 
-  // ✅ ONLY SUBMIT FUNCTION (Brevo form endpoint)
-  async function submitEmail() {
-    const email = document.getElementById("emailInput").value.trim();
-    if (!email) {
-      alert("Please enter a valid email.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("EMAIL", email);
-
-    try {
-      await fetch("https://sibforms.com/serve/YOUR_FORM_ID_HERE", {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-      });
-
-      document.querySelector(".modal-content").innerHTML = `
-        <h2>You're in 🙏</h2>
-        <p>We’ll notify you when Yahway launches on Android.</p>
-      `;
-    } catch (err) {
-      alert("Something went wrong. Try again.");
+  function closeModal(e) {
+    if (e.target.id === 'notifyModal') {
+      document.getElementById('notifyModal').style.display = 'none';
     }
   }
 </script>
-    </div>
-  </div>
 
-  <script>
-    /* Modal functions */
-    function openModal() { document.getElementById('notifyModal').style.display = 'flex'; }
-    function closeModal() { document.getElementById('notifyModal').style.display = 'none'; }
-
-    /* Brevo submission */
-    async function submitEmail() {
-      const email = document.getElementById("emailInput").value;
-      if (!email) { alert("Please enter a valid email."); return; }
-
-      try {
-        const response = await fetch("/api/brevo-android-waitlist", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
-        });
-
-        if (response.ok) {
-          document.querySelector(".modal-content").innerHTML = `
-            <h2>You're in 🙏</h2>
-            <p>We’ll notify you when Yahway launches on Android.</p>
-          `;
-        } else {
-          alert("Something went wrong. Try again.");
-        }
-      } catch (err) {
-        alert("Network error. Please try again.");
-      }
-    }
-
-    /* Particle animation */
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
-    let w, h;
-    function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random()*w; this.y = Math.random()*h;
-        this.size = Math.random()*2 + 1;
-        this.speedX = (Math.random()-0.5)*0.2; this.speedY = (Math.random()-0.5)*0.2;
-        this.alpha = Math.random()*0.6+0.2;
-      }
-      update() { this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>w||this.y<0||this.y>h) this.reset(); }
-      draw() { ctx.fillStyle=`rgba(245,199,122,${this.alpha})`; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); }
-    }
-
-    const particles=[]; for(let i=0;i<120;i++) particles.push(new Particle());
-
-    function animateParticles(){
-      ctx.clearRect(0,0,w,h);
-      particles.forEach(p=>{p.update();p.draw();});
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-  </script>
 </body>
 </html>
