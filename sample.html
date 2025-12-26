@@ -12,9 +12,10 @@
   <style>
     :root {
       --gold: #f5c77a;
-      --deep-blue: #0b1020;
-      --soft-blue: #121a35;
-      --text-muted: rgba(255,255,255,0.75);
+      --dark-gray: #1b1b1d;
+      --soft-gray: #242424;
+      --white: #ffffff;
+      --white-muted: rgba(255,255,255,0.75);
     }
 
     * {
@@ -25,29 +26,29 @@
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background: radial-gradient(circle at top, #1b2555, var(--deep-blue));
-      color: white;
+      background: radial-gradient(circle at top, var(--soft-gray), var(--dark-gray));
+      color: var(--white);
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Subtle animated background */
+    /* Subtle floating background */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.15), transparent),
-        radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,0.12), transparent),
-        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.1), transparent);
-      animation: float 20s linear infinite;
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.12), transparent),
+        radial-gradient(2px 2px at 70% 55%, rgba(255,255,255,0.1), transparent),
+        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.08), transparent);
+      animation: float 22s linear infinite;
       pointer-events: none;
       z-index: 0;
     }
 
     @keyframes float {
       from { transform: translateY(0); }
-      to { transform: translateY(-80px); }
+      to { transform: translateY(-90px); }
     }
 
     main {
@@ -60,7 +61,7 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.6rem, 5vw, 4rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
@@ -70,7 +71,7 @@
       font-size: 1.35rem;
       font-weight: 500;
       margin-bottom: 1.25rem;
-      color: var(--gold);
+      color: var(--white);
     }
 
     .impact {
@@ -78,7 +79,7 @@
       margin: 0 auto 2.75rem;
       font-size: 1.15rem;
       line-height: 1.7;
-      color: var(--text-muted);
+      color: var(--white-muted);
     }
 
     .cta {
@@ -102,7 +103,7 @@
     .platform-note {
       margin-top: 1.25rem;
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--white-muted);
     }
 
     .platform-note button {
@@ -139,13 +140,13 @@
     .feature p {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: var(--text-muted);
+      color: var(--white-muted);
     }
 
     footer {
       margin-top: 5rem;
       font-size: 0.85rem;
-      opacity: 0.6;
+      color: var(--white-muted);
     }
 
     /* Modal */
@@ -160,16 +161,21 @@
     }
 
     .modal-content {
-      background: #121a35;
+      background: #242424;
       padding: 2.5rem;
       border-radius: 18px;
       max-width: 420px;
       width: 90%;
       text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .modal-content h2 {
       margin-bottom: 0.75rem;
+    }
+
+    .modal-content p {
+      color: var(--white-muted);
     }
 
     .modal-content input {
@@ -179,6 +185,8 @@
       border: none;
       margin-top: 1rem;
       font-size: 1rem;
+      background: #2c2c2c;
+      color: white;
     }
 
     .modal-content button {
@@ -239,8 +247,8 @@
     <div class="modal-content">
       <h2>Android Launch</h2>
       <p>Be the first to know when Yahway arrives on Android.</p>
-      <input type="email" placeholder="Your email address" />
-      <button onclick="closeModal()">Notify Me</button>
+      <input type="email" id="emailInput" placeholder="Your email address" />
+      <button onclick="submitEmail()">Notify Me</button>
     </div>
   </div>
 
@@ -248,8 +256,33 @@
     function openModal() {
       document.getElementById('notifyModal').style.display = 'flex';
     }
+
     function closeModal() {
       document.getElementById('notifyModal').style.display = 'none';
+    }
+
+    async function submitEmail() {
+      const email = document.getElementById("emailInput").value;
+      if (!email) { alert("Please enter a valid email."); return; }
+
+      try {
+        const response = await fetch("/api/brevo-android-waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+
+        if (response.ok) {
+          document.querySelector(".modal-content").innerHTML = `
+            <h2>You're in 🙏</h2>
+            <p>We’ll notify you when Yahway launches on Android.</p>
+          `;
+        } else {
+          alert("Something went wrong. Try again.");
+        }
+      } catch (err) {
+        alert("Network error. Please try again.");
+      }
     }
   </script>
 </body>
