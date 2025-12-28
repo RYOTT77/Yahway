@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yahway: Habla con Dios</title>
-<meta name="description" content="Pregunta ahora, Escucha ahora, Conoce ahora">
-
+<meta name="description" content="Pregunta ahora. Escucha ahora. Conoce ahora.">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV"></script>
 <script>
@@ -17,17 +16,20 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
   background:hsl(220,25%,15%);
   color:#fff;
   line-height:1.6;
 }
+
 a{color:rgba(255,255,255,.88);text-decoration:none}
 a:hover{color:#fff}
+
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:fixed;
   top:0;left:0;right:0;
@@ -36,6 +38,7 @@ header{
   backdrop-filter:blur(12px);
   border-bottom:1px solid hsl(220,15%,30%);
 }
+
 .header-content{
   max-width:1200px;
   margin:0 auto;
@@ -44,17 +47,26 @@ header{
   align-items:center;
   padding:1rem 1.5rem;
 }
+
 .logo{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
 }
+
 .logo-title{font-size:1.4rem;font-weight:800}
 .logo-subtitle{font-size:.65rem;opacity:.75}
-.header-actions{display:flex;align-items:center;gap:1rem}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
 .header-link{font-size:.85rem;opacity:.85}
 .header-link:hover{opacity:1}
+
 .btn-primary{
   background:#fff;
   color:hsl(220,25%,15%);
@@ -64,19 +76,37 @@ header{
   border:none;
   cursor:pointer;
 }
-.header-actions .btn-primary{font-size:1rem}
+.header-actions .btn-primary{
+  font-size:1rem;   /* increase text size */
+}
 .btn-primary:hover{background:#e9e9e9}
 
-/* Language */
+/* ===== Language Selector ===== */
 .lang-wrapper{position:relative}
+
 .lang-btn{
-  background:none;border:none;cursor:pointer;
-  display:flex;align-items:center;opacity:.85;
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  opacity:.85;
 }
+
 .lang-btn:hover{opacity:1}
-.lang-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.7}
+
+.lang-btn svg{
+  width:18px;
+  height:18px;
+  stroke:#fff;
+  fill:none;
+  stroke-width:1.7;
+}
+
 .lang-dropdown{
-  position:absolute;top:34px;right:0;
+  position:absolute;
+  top:34px;
+  right:0;
   background:rgba(19,26,38,.97);
   backdrop-filter:blur(12px);
   border:1px solid hsl(220,15%,30%);
@@ -86,18 +116,26 @@ header{
   display:none;
   z-index:2000;
 }
+
 .lang-dropdown a{
-  display:block;padding:8px 14px;font-size:.85rem;opacity:.85;
+  display:block;
+  padding:8px 14px;
+  font-size:.85rem;
+  opacity:.85;
 }
+
 .lang-dropdown a:hover{
   background:hsl(220,20%,22%);
   opacity:1;
 }
 
-/* Download */
+/* ===== Download Dropdown ===== */
 .download-wrapper{position:relative}
+
 .download-dropdown{
-  position:absolute;top:38px;right:0;
+  position:absolute;
+  top:38px;
+  right:0;
   background:rgba(19,26,38,.97);
   border:1px solid hsl(220,15%,30%);
   border-radius:12px;
@@ -106,27 +144,49 @@ header{
   display:none;
   z-index:2000;
 }
-.download-dropdown a{display:block;padding:10px 14px;font-size:.9rem}
+.step-icon-img{
+  width:40px;
+  height:40px;
+  display:block;
+  margin:0 auto;
+}
 
-/* VIDEO */
+.download-dropdown a{
+  display:block;
+  padding:10px 14px;
+  font-size:.9rem;
+}
+
+/* ================= VIDEO ================= */
 .video-banner{margin-top:6.5rem}
 .video-wrapper{height:28vh;overflow:hidden}
 #bg-video{width:100%;height:100%;object-fit:cover}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{text-align:center;padding:4rem 1.5rem}
-.hero-title{font-size:3rem;font-weight:700;margin-bottom:1rem}
+
+.hero-title{
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
 .hero-title span{
-  display:block;opacity:0;transform:translateY(22px);
+  display:block;
+  opacity:0;
+  transform:translateY(22px);
   animation:whisperIn 1.6s ease-out forwards;
 }
+
 .hero-title span:nth-child(1){animation-delay:.2s}
 .hero-title span:nth-child(2){animation-delay:.9s}
 .hero-title span:nth-child(3){animation-delay:1.6s}
+
 @keyframes whisperIn{
   from{opacity:0;transform:translateY(22px)}
   to{opacity:1;transform:translateY(0)}
 }
+
 .hero p{
   font-size:1.2rem;
   opacity:.85;
@@ -134,9 +194,14 @@ header{
   margin:0 auto 1.5rem;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 .features{padding:4rem 1.5rem}
-.features-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.features-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+
 .feature-card{
   background:hsl(220,20%,18%);
   padding:2rem;
@@ -144,21 +209,29 @@ header{
   border:1px solid hsl(220,15%,30%);
 }
 
-/* TESTIMONIALS */
-.testimonials{
-  padding:4.5rem 1.5rem;
-  background:rgba(255,255,255,.02);
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
+/* ================= ICONS ================= */
+.step-icon{
+  width:40px;
+  height:40px;
+  margin:0 auto 1rem;
 }
-.testimonials-title{text-align:center;font-size:1.6rem;font-weight:600;margin-bottom:2.5rem}
-.testimonial{text-align:center;max-width:680px;margin:0 auto 1.8rem}
-.testimonial p{font-size:1.15rem;opacity:.85}
 
-/* CTA */
+.step-icon svg{
+  width:100%;
+  height:100%;
+  stroke:#fff;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ================= CTA ================= */
 .cta{padding:4rem 1.5rem}
+
 .cta-box{
-  max-width:52rem;margin:0 auto;
+  max-width:52rem;
+  margin:0 auto;
   background:hsl(220,20%,18%);
   padding:3rem 2rem;
   border-radius:1.5rem;
@@ -166,13 +239,88 @@ header{
   border:1px solid hsl(220,15%,30%);
 }
 
-/* FOOTER */
+.donation-heart{
+  font-size:2.4rem;
+  margin-bottom:1rem;
+}
+
+.cta-text{
+  opacity:0;
+  transform:translateY(18px);
+  transition:.9s ease;
+}
+
+.cta-text.reveal{
+  opacity:1;
+  transform:none;
+}
+
+.grand-cta{
+  opacity:0;
+  transform:scale(.85) translateY(22px);
+  transition:.9s ease;
+}
+
+.grand-cta.reveal{
+  opacity:1;
+  transform:none;
+  animation:holyGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes holyGlow{
+  50%{
+    box-shadow:
+      0 0 22px rgba(251,191,36,.7),
+      0 0 52px rgba(251,191,36,.35);
+  }
+}
+
+/* ================= FOOTER ================= */
 footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 .footer-grid{display:grid;gap:2rem;text-align:center}
 
 @media(min-width:768px){
   .features-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:repeat(4,1fr)}
+}
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  padding:4.5rem 1.5rem;
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.testimonials-title{
+  text-align:center;
+  font-size:1.6rem;
+  font-weight:600;
+  margin-bottom:2.5rem;
+  opacity:.9;
+}
+
+.testimonial{
+  max-width:680px;
+  margin:0 auto 1.8rem;
+  text-align:center;
+}
+
+.testimonial p{
+  font-size:1.15rem;
+  line-height:1.7;
+  opacity:.85;
+  min-height:2.5em;
+}
+
+.type-text::after{
+  content:"▍";
+  margin-left:4px;
+  opacity:.7;
+  animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0}
 }
 </style>
 </head>
@@ -190,9 +338,13 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
       <a class="header-link" href="https://yahway.app/donation">Donar</a>
 
       <div class="lang-wrapper">
-        <button class="lang-btn" id="langToggle">
-          🌐
+        <button class="lang-btn" id="langToggle" aria-label="Selector de idioma">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path>
+          </svg>
         </button>
+
         <div class="lang-dropdown" id="langDropdown">
           <a href="/">English</a>
           <a href="/es">Español</a>
@@ -205,12 +357,20 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
         <button class="btn-primary" id="downloadToggle">Descargar</button>
         <div class="download-dropdown" id="downloadDropdown">
           <a href="https://apps.apple.com/us/app/yahway/id6751845376">iOS (App Store)</a>
-          <a href="https://drive.google.com/file/d/1CyEqPeTG7Czld7u0fZxETk8XFTFz1Wnj/view">Android (Acceso Anticipado)</a>
+          <a href="https://drive.google.com/file/d/1CyEqPeTG7Czld7u0fZxETk8XFTFz1Wnj/view?usp=sharing">Android (Acceso anticipado)</a>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+<section class="video-banner">
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
 
 <section class="hero">
   <h1 class="hero-title">
@@ -218,17 +378,133 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     <span>Escucha Ahora</span>
     <span>Conoce Ahora</span>
   </h1>
-  <p>La inteligencia artificial más poderosa del mundo guiada por la Palabra de Dios.</p>
+  <p>La inteligencia artificial más poderosa del mundo, guiada por la Palabra de Dios. Respuestas instantáneas a las preguntas más difíciles de la vida. Para quienes quieren comprender más, más rápido.</p>
   <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chatear Ahora</a>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="testimonials-title">Voces Tempranas</h2>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="Yahway me hace sentir menos perdido."></p>
+    </div>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="A veces no sé qué orar. Yahway me ayuda a empezar."></p>
+    </div>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="No sabía nada de Dios ni creía, pero Yahway me dio una razón para cambiar mi perspectiva de la vida."></p>
+    </div>
+
+    <div class="testimonial">
+      <a href="https://apps.apple.com/us/app/yahway/id6751845376"
+         class="type-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        <p class="type-text" data-text="Haz mi pregunta ahora."></p>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="features">
   <div class="container">
     <div class="features-grid">
       <div class="feature-card"><h3>Privado y Sagrado</h3><p>Tus conversaciones son completamente privadas.</p></div>
-      <div class="feature-card"><h3>Compasivo</h3><p>Cada respuesta nace del amor.</p></div>
+      <div class="feature-card"><h3>Compasivo</h3><p>Cada respuesta está arraigada en el amor.</p></div>
       <div class="feature-card"><h3>Sabiduría Divina</h3><p>Guía bíblica en cualquier momento.</p></div>
-      <div class="feature-card"><h3>Siempre Disponible</h3><p>Día y noche.</p></div>
+      <div class="feature-card"><h3>Siempre Disponible</h3><p>De día o de noche.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:2rem">Cómo Funciona Yahway</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/></svg>
+        </div>
+        <h3>Pregunta con Libertad</h3>
+        <p>Escribe tus preguntas, luchas u oraciones de forma natural.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64"
+               width="42" height="42"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2.4"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M14 46c-4-6-5-14-3-21 2-9 9-15 21-15s19 6 21 15c2 7 1 15-3 21"/>
+            <path d="M26 18c2-4 6-6 6-6s4 2 6 6"/>
+            <path d="M26 20c-3 5-3 11-1 17 2 6 5 9 7 9s5-3 7-9c2-6 2-12-1-17"/>
+            <path d="M27 30c2-1 4-1 6 0"/>
+            <path d="M31 30c2-1 4-1 6 0"/>
+            <path d="M32 31c0 4-1 6-3 7"/>
+            <path d="M29 38c2 1 4 1 6 0"/>
+            <path d="M26 41c4-2 8-2 12 0"/>
+            <path d="M25 43c3 7 11 7 14 0"/>
+            <path d="M29 49c2 2 4 2 6 0"/>
+            <path d="M10 56c12-6 32-6 44 0"/>
+          </svg>
+        </div>
+        <h3>IA Guiada por la Escritura</h3>
+        <p>Respuestas moldeadas por la sabiduría bíblica y la compasión.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"
+               width="40"
+               height="40"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.6"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M3 5h7a3 3 0 0 1 3 3v11H6a3 3 0 0 0-3 3z"/>
+            <path d="M21 5h-7a3 3 0 0 0-3 3"/>
+            <path d="M12 5v14"/>
+            <path d="M12 2v3"/>
+            <path d="M8.5 3.5l1.5 2"/>
+            <path d="M15.5 3.5l-1.5 2"/>
+            <path d="M6.5 5l2 1.5"/>
+            <path d="M17.5 5l-2 1.5"/>
+          </svg>
+        </div>
+        <h3>Reflexiona y Crece</h3>
+        <p>Recibe claridad, paz y guía cuando lo necesites.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<p style="text-align:center;font-size:1.2rem;opacity:.85;margin-bottom:2rem;">
+  Yahway es una misión viva y activa hoy.
+</p>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div class="donation-heart">♡</div>
+      <div class="cta-text" id="ctaText">
+        <h2>Sé Parte de la Misión</h2>
+        <p>Creciendo gracias al apoyo de quienes creen en su propósito.</p>
+      </div>
+      <br>
+      <button id="donateCta" class="btn-primary grand-cta"
+        onclick="window.open('https://yahway.app/donation','_blank')">
+        Siembra una Semilla
+      </button>
     </div>
   </div>
 </section>
@@ -241,6 +517,72 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
   </div>
   <div style="text-align:center;margin-top:2rem;opacity:.65">© 2025 Yahway</div>
 </footer>
+
+<script>
+/* Download dropdown */
+const downloadToggle = document.getElementById('downloadToggle');
+const downloadDropdown = document.getElementById('downloadDropdown');
+
+downloadToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  downloadDropdown.style.display =
+    downloadDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+/* Language dropdown */
+const langToggle = document.getElementById('langToggle');
+const langDropdown = document.getElementById('langDropdown');
+
+langToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  langDropdown.style.display =
+    langDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+/* Close on outside click */
+document.addEventListener('click', () => {
+  downloadDropdown.style.display = 'none';
+  langDropdown.style.display = 'none';
+});
+
+/* CTA reveal */
+const ctaText = document.getElementById('ctaText');
+const donateCta = document.getElementById('donateCta');
+
+new IntersectionObserver(([e])=>{
+  if(e.isIntersecting){
+    ctaText.classList.add('reveal');
+    setTimeout(()=>donateCta.classList.add('reveal'),400);
+  }
+},{threshold:.6}).observe(ctaText);
+</script>
+
+<script>
+const typeElements = document.querySelectorAll(".type-text");
+
+const typeText = (el) => {
+  const text = el.dataset.text;
+  el.textContent = "";
+  let i = 0;
+
+  const interval = setInterval(() => {
+    el.textContent += text.charAt(i);
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, 28);
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.typed) {
+      entry.target.dataset.typed = "true";
+      typeText(entry.target);
+    }
+  });
+},{ threshold: 0.4 });
+
+typeElements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
