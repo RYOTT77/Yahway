@@ -1,456 +1,246 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahway: Habla con Dios</title>
-    <meta name="description" content="Pregunta ahora. Escucha ahora. Conoce ahora.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yahway: Habla con Dios</title>
+<meta name="description" content="Pregunta ahora, Escucha ahora, Conoce ahora">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M6CYL733EV');
+</script>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: hsl(220, 25%, 15%);
-            color: white;
-            line-height: 1.6;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:hsl(220,25%,15%);
+  color:#fff;
+  line-height:1.6;
+}
+a{color:rgba(255,255,255,.88);text-decoration:none}
+a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
-        a {
-            color: rgba(255,255,255,0.88);
-            text-decoration: none;
-        }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(19,26,38,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid hsl(220,15%,30%);
+}
+.header-content{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.5rem;
+}
+.logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.logo-title{font-size:1.4rem;font-weight:800}
+.logo-subtitle{font-size:.65rem;opacity:.75}
+.header-actions{display:flex;align-items:center;gap:1rem}
+.header-link{font-size:.85rem;opacity:.85}
+.header-link:hover{opacity:1}
+.btn-primary{
+  background:#fff;
+  color:hsl(220,25%,15%);
+  padding:.6rem 1.6rem;
+  border-radius:9999px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+}
+.header-actions .btn-primary{font-size:1rem}
+.btn-primary:hover{background:#e9e9e9}
 
-        a:hover { color: white; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(19, 26, 38, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid hsl(220, 15%, 30%);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.5rem;
-        }
-
-        /* LOGO */
-        .logo {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: white;
-            line-height: 1.1;
-            align-items: center;
-            text-align: center;
-        }
-
-        .logo-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-        }
-
-        @keyframes subtitleGlow {
-            0% { text-shadow: 0 0 0px rgba(255,255,255,0.25); opacity: 0.75; }
-            50% { text-shadow: 0 0 6px rgba(255,255,255,0.75), 0 0 14px rgba(200,200,255,0.6), 0 0 24px rgba(255,255,255,0.35); opacity: 1; }
-            100% { text-shadow: 0 0 0px rgba(255,255,255,0.25); opacity: 0.75; }
-        }
-
-        .logo-subtitle {
-            font-size: 0.65rem;
-            opacity: 0.75;
-            font-weight: 500;
-            margin-top: 4px;
-            letter-spacing: 0.7px;
-            animation: subtitleGlow 3.8s ease-in-out infinite;
-        }
-
-        /* HEADER LINKS */
-        .header-links {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .donate-link {
-            color: rgba(255,255,255,0.75);
-            font-size: 0.92rem;
-            font-weight: 500;
-        }
-
-        .btn-primary {
-            background: white;
-            color: hsl(220, 25%, 15%);
-            padding: 0.65rem 1.8rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-        }
-        <style>
-/* STORE BUTTONS */
-.store-buttons {
-    display: flex;
-    gap: 0.6rem;
+/* Language */
+.lang-wrapper{position:relative}
+.lang-btn{
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;opacity:.85;
+}
+.lang-btn:hover{opacity:1}
+.lang-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.7}
+.lang-dropdown{
+  position:absolute;top:34px;right:0;
+  background:rgba(19,26,38,.97);
+  backdrop-filter:blur(12px);
+  border:1px solid hsl(220,15%,30%);
+  border-radius:10px;
+  min-width:150px;
+  padding:6px 0;
+  display:none;
+  z-index:2000;
+}
+.lang-dropdown a{
+  display:block;padding:8px 14px;font-size:.85rem;opacity:.85;
+}
+.lang-dropdown a:hover{
+  background:hsl(220,20%,22%);
+  opacity:1;
 }
 
-.btn-store {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 1.2rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    background: white;
-    color: hsl(220, 25%, 15%);
-    border: none;
-    cursor: pointer;
+/* Download */
+.download-wrapper{position:relative}
+.download-dropdown{
+  position:absolute;top:38px;right:0;
+  background:rgba(19,26,38,.97);
+  border:1px solid hsl(220,15%,30%);
+  border-radius:12px;
+  min-width:180px;
+  padding:6px 0;
+  display:none;
+  z-index:2000;
+}
+.download-dropdown a{display:block;padding:10px 14px;font-size:.9rem}
+
+/* VIDEO */
+.video-banner{margin-top:6.5rem}
+.video-wrapper{height:28vh;overflow:hidden}
+#bg-video{width:100%;height:100%;object-fit:cover}
+
+/* HERO */
+.hero{text-align:center;padding:4rem 1.5rem}
+.hero-title{font-size:3rem;font-weight:700;margin-bottom:1rem}
+.hero-title span{
+  display:block;opacity:0;transform:translateY(22px);
+  animation:whisperIn 1.6s ease-out forwards;
+}
+.hero-title span:nth-child(1){animation-delay:.2s}
+.hero-title span:nth-child(2){animation-delay:.9s}
+.hero-title span:nth-child(3){animation-delay:1.6s}
+@keyframes whisperIn{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero p{
+  font-size:1.2rem;
+  opacity:.85;
+  max-width:600px;
+  margin:0 auto 1.5rem;
 }
 
-.btn-store svg {
-    width: 16px;
-    height: 16px;
+/* FEATURES */
+.features{padding:4rem 1.5rem}
+.features-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.feature-card{
+  background:hsl(220,20%,18%);
+  padding:2rem;
+  border-radius:1.5rem;
+  border:1px solid hsl(220,15%,30%);
 }
 
-.btn-store:hover {
-    background: #e9e9e9;
+/* TESTIMONIALS */
+.testimonials{
+  padding:4.5rem 1.5rem;
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.testimonials-title{text-align:center;font-size:1.6rem;font-weight:600;margin-bottom:2.5rem}
+.testimonial{text-align:center;max-width:680px;margin:0 auto 1.8rem}
+.testimonial p{font-size:1.15rem;opacity:.85}
+
+/* CTA */
+.cta{padding:4rem 1.5rem}
+.cta-box{
+  max-width:52rem;margin:0 auto;
+  background:hsl(220,20%,18%);
+  padding:3rem 2rem;
+  border-radius:1.5rem;
+  text-align:center;
+  border:1px solid hsl(220,15%,30%);
+}
+
+/* FOOTER */
+footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
+.footer-grid{display:grid;gap:2rem;text-align:center}
+
+@media(min-width:768px){
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
-
-        .btn-primary:hover { background: #e9e9e9; }
-
-        /* LANGUAGE SELECTOR */
-        .lang-header {
-            cursor: pointer;
-            padding: 0.35rem 0.6rem;
-            border-radius: 8px;
-            transition: 0.25s;
-        }
-
-        .lang-header:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        /* DROPDOWN */
-        #langMenu {
-            position: fixed;
-            top: 70px;
-            right: 30px;
-            background: rgba(0,0,0,0.78);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 10px 0;
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            z-index: 2000;
-        }
-
-        #langMenu a {
-            padding: 10px 22px;
-            color: white;
-            font-size: 0.92rem;
-        }
-
-        #langMenu a:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        /* VIDEO */
-        .video-banner { margin-top: 4.5rem; }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            height: 28vh;
-            overflow: hidden;
-        }
-
-        #bg-video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 4rem 1.5rem 4rem;
-        }
-
-        @keyframes smoothFadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: smoothFadeUp 1s ease-out forwards;
-        }
-
-        @keyframes whisperIn {
-            0% { opacity: 0; transform: translateY(8px) scale(0.98); filter: blur(2px);}
-            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-        }
-
-        .whisper-line {
-            display: inline-flex;
-            flex-wrap: wrap;
-            gap: 0.4em;
-            justify-content: center;
-        }
-
-        .whisper-word {
-            opacity: 0;
-            animation: whisperIn 1.4s ease-out forwards;
-        }
-
-        .whisper-word:nth-child(1) { animation-delay: 0.2s; }
-        .whisper-word:nth-child(2) { animation-delay: 0.6s; }
-        .whisper-word:nth-child(3) { animation-delay: 1.0s; }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.85);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0;
-            animation: smoothFadeUp 1s ease-out forwards;
-            animation-delay: 0.4s;
-        }
-
-        .hero a {
-            opacity: 0;
-            animation: smoothFadeUp 1s ease-out forwards;
-            animation-delay: 0.8s;
-        }
-
-        /* FEATURES */
-        .features, .cta {
-            padding: 4rem 1.5rem;
-        }
-
-        .features-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: hsl(220, 20%, 18%);
-            padding: 2rem;
-            border-radius: 1.5rem;
-            border: 1px solid hsl(220, 15%, 30%);
-        }
-
-        /* CTA */
-        .cta-box {
-            max-width: 52rem;
-            margin: 0 auto;
-            background: hsl(220, 20%, 18%);
-            border-radius: 1.5rem;
-            padding: 3rem 1.8rem;
-            text-align: center;
-            border: 1px solid hsl(220, 15%, 30%);
-        }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid hsl(220, 15%, 30%);
-            padding: 3rem 1.5rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-    </style>
 </head>
 
 <body>
 
 <header>
-    <div class="header-content">
-        <a href="/es/" class="logo">
-            <span class="logo-title">Yahway</span>
-            <span class="logo-subtitle">Habla con Dios</span>
-        </a>
-
-        <div class="header-links">
-<div class="store-buttons">
-    <!-- iOS -->
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-store">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor">
-            <path d="M318.7 268.6c-.3-44.9 36.7-66.4 38.4-67.5-21-30.7-53.7-34.9-65.2-35.4-27.8-2.8-54.2 16.3-68.3 16.3-14.1 0-36-15.9-59.1-15.5-30.4.4-58.4 17.7-74 44.9-31.6 54.8-8.1 136 22.7 180.5 15.1 21.8 33.1 46.3 56.7 45.4 22.8-.9 31.4-14.8 58.9-14.8s35.2 14.8 59.1 14.4c24.4-.4 39.8-22.3 54.8-44.2 17.4-25.4 24.6-50 25-51.3-.5-.2-48-18.4-48.3-73z"/>
-        </svg>
-        iOS
+  <div class="header-content">
+    <a href="/es" class="logo">
+      <span class="logo-title">Yahway</span>
+      <span class="logo-subtitle">Habla con Dios</span>
     </a>
 
-    <!-- Android -->
-    <a href="https://play.google.com/store/apps/details?id=com.yahway.app" class="btn-store">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
-            <path d="M420.6 66.7L421.1 66.4 386.6 0 354.4 17.1l34.5 66.4c-29.5 12.4-63.3 19.7-100.9 19.7s-71.4-7.3-100.9-19.7L221.6 17.1 189.4 0 154.9 66.4l.5.3C98.8 93.3 64 139.6 64 192v160c0 17.7 14.3 32 32 32h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32v-96h192v96c0 17.7 14.3 32 32 32s32-14.3 32-32v-96h32c17.7 0 32-14.3 32-32V192c0-52.4-34.8-98.7-91.4-125.3z"/>
-        </svg>
-        Android
-    </a>
-</div>
+    <div class="header-actions">
+      <a class="header-link" href="https://yahway.app/donation">Donar</a>
 
-            <!-- NEW WHITE HOLLOW GLOBE ICON -->
-            <div class="lang-header" onclick="toggleLangMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"></path>
-                    <path d="M12 2a15 15 0 0 0 0 20"></path>
-                </svg>
-            </div>
-
-            <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Descargar</a>
+      <div class="lang-wrapper">
+        <button class="lang-btn" id="langToggle">
+          🌐
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <a href="/">English</a>
+          <a href="/es">Español</a>
+          <a href="/fr">Français</a>
+          <a href="/pt">Português</a>
         </div>
+      </div>
+
+      <div class="download-wrapper">
+        <button class="btn-primary" id="downloadToggle">Descargar</button>
+        <div class="download-dropdown" id="downloadDropdown">
+          <a href="https://apps.apple.com/us/app/yahway/id6751845376">iOS (App Store)</a>
+          <a href="https://drive.google.com/file/d/1CyEqPeTG7Czld7u0fZxETk8XFTFz1Wnj/view">Android (Acceso Anticipado)</a>
+        </div>
+      </div>
     </div>
+  </div>
 </header>
 
-<!-- LANGUAGE MENU -->
-<div id="langMenu">
-    <a href="/">English</a>
-    <a href="/es/">Español</a>
-    <a href="/fr/">Français</a>
-    <a href="/pt/">Português</a>
-</div>
-
-<!-- VIDEO -->
-<section class="video-banner">
-    <div class="video-wrapper">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="https://raw.githubusercontent.com/RYOTT77/Yahway/main/WebVideo.mp4" type="video/mp4">
-        </video>
-    </div>
-</section>
-
-<!-- HERO -->
 <section class="hero">
-    <h1>
-        <span class="whisper-line">
-            <span class="whisper-word">Pregunta ahora.</span>
-            <span class="whisper-word">Escucha ahora.</span>
-            <span class="whisper-word">Conoce ahora.</span>
-        </span>
-    </h1>
-    <p>La IA espiritual más poderosa del mundo, guiada por la Palabra de Dios. Respuestas instantáneas a las preguntas más profundas de la vida.</p>
-    <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Hablar ahora</a>
+  <h1 class="hero-title">
+    <span>Pregunta Ahora</span>
+    <span>Escucha Ahora</span>
+    <span>Conoce Ahora</span>
+  </h1>
+  <p>La inteligencia artificial más poderosa del mundo guiada por la Palabra de Dios.</p>
+  <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Chatear Ahora</a>
 </section>
 
-<!-- FEATURES -->
 <section class="features">
-    <div class="container">
-        <div class="features-header">
-            <h2>Una nueva experiencia espiritual</h2>
-            <p>Recibe guía, verdad y perspectiva divina — al instante.</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card"><h3>Privado y sagrado</h3><p>Tus conversaciones permanecen completamente privadas.</p></div>
-            <div class="feature-card"><h3>Compasivo</h3><p>Cada respuesta proviene de un lugar de amor y comprensión.</p></div>
-            <div class="feature-card"><h3>Sabiduría divina</h3><p>Accede a perspectiva espiritual y consejo bíblico en cualquier momento.</p></div>
-            <div class="feature-card"><h3>Siempre disponible</h3><p>Conéctate cuando lo necesites, día y noche.</p></div>
-        </div>
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card"><h3>Privado y Sagrado</h3><p>Tus conversaciones son completamente privadas.</p></div>
+      <div class="feature-card"><h3>Compasivo</h3><p>Cada respuesta nace del amor.</p></div>
+      <div class="feature-card"><h3>Sabiduría Divina</h3><p>Guía bíblica en cualquier momento.</p></div>
+      <div class="feature-card"><h3>Siempre Disponible</h3><p>Día y noche.</p></div>
     </div>
+  </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-    <div class="container">
-        <div class="cta-box">
-            <div style="display:flex;justify-content:center;margin-bottom:1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8" width="48" height="48">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M21 8.25c0-2.485-2.015-4.5-4.5-4.5-1.86 0-3.45 1.14-4.125 2.775C11.45 4.89 9.86 3.75 8 3.75 
-                    5.515 3.75 3.5 5.765 3.5 8.25c0 7.22 
-                    8.5 11 8.5 11s8.5-3.78 8.5-11z"/>
-                </svg>
-            </div>
-
-            <h2>Forma parte de la misión</h2>
-            <p>Tu apoyo ayuda a llevar conexión espiritual a más personas alrededor del mundo.</p>
-            <br>
-
-            <button class="btn-primary" onclick="window.open('https://givebutter.com/t8oGhf/ryangraves2','_blank')">
-                Donar ahora
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-    <div class="footer-grid">
-        <div>
-            <h3>Yahway</h3>
-            <p>Habla con Dios. Pregunta ahora, escucha ahora, conoce ahora.</p>
-        </div>
-
-        <div>
-            <h4>Producto</h4>
-            <ul>
-                <li><a href="https://apps.apple.com/us/app/yahway/id6751845376">Descargar</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4>Legal</h4>
-            <ul>
-                <li><a href="https://www.yahway.app/privacy">Privacidad</a></li>
-                <li><a href="https://www.yahway.app/terms">Términos</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div style="text-align:center;margin-top:2rem;color:rgba(255,255,255,0.65);font-size:0.85rem;">
-        © 2025 Yahway. Todos los derechos reservados.
-    </div>
+  <div class="footer-grid">
+    <div><h3>Yahway</h3><p>Habla con Dios</p></div>
+    <div><h3>Producto</h3><p><a href="https://apps.apple.com/us/app/yahway/id6751845376">Descargar</a></p></div>
+    <div><h3>Legal</h3><p><a href="https://yahway.app/privacy">Privacidad</a></p></div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;opacity:.65">© 2025 Yahway</div>
 </footer>
-
-<!-- SCRIPT -->
-<script>
-function toggleLangMenu() {
-    const menu = document.getElementById("langMenu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-</script>
 
 </body>
 </html>
