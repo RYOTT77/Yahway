@@ -82,7 +82,9 @@ header{
   border:none;
   cursor:pointer;
 }
-.header-actions .btn-primary{font-size:1rem}
+.header-actions .btn-primary{
+  font-size:1rem;   /* increase text size */
+}
 .btn-primary:hover{background:#e9e9e9}
 
 /* ===== Language Selector ===== */
@@ -96,6 +98,7 @@ header{
   align-items:center;
   opacity:.85;
 }
+
 .lang-btn:hover{opacity:1}
 
 .lang-btn svg{
@@ -147,6 +150,12 @@ header{
   display:none;
   z-index:2000;
 }
+.step-icon-img{
+  width:40px;
+  height:40px;
+  display:block;
+  margin:0 auto;
+}
 
 .download-dropdown a{
   display:block;
@@ -193,13 +202,34 @@ header{
 
 /* ================= FEATURES ================= */
 .features{padding:4rem 1.5rem}
-.features-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+.features-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
 
 .feature-card{
   background:hsl(220,20%,18%);
   padding:2rem;
   border-radius:1.5rem;
   border:1px solid hsl(220,15%,30%);
+}
+
+/* ================= ICONS ================= */
+.step-icon{
+  width:40px;
+  height:40px;
+  margin:0 auto 1rem;
+}
+
+.step-icon svg{
+  width:100%;
+  height:100%;
+  stroke:#fff;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 /* ================= CTA ================= */
@@ -215,7 +245,10 @@ header{
   border:1px solid hsl(220,15%,30%);
 }
 
-.donation-heart{font-size:2.4rem;margin-bottom:1rem}
+.donation-heart{
+  font-size:2.4rem;
+  margin-bottom:1rem;
+}
 
 .cta-text{
   opacity:0;
@@ -223,7 +256,10 @@ header{
   transition:.9s ease;
 }
 
-.cta-text.reveal{opacity:1;transform:none}
+.cta-text.reveal{
+  opacity:1;
+  transform:none;
+}
 
 .grand-cta{
   opacity:0;
@@ -252,6 +288,45 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 @media(min-width:768px){
   .features-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:repeat(4,1fr)}
+}
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  padding:4.5rem 1.5rem;
+  background:rgba(255,255,255,.02);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.testimonials-title{
+  text-align:center;
+  font-size:1.6rem;
+  font-weight:600;
+  margin-bottom:2.5rem;
+  opacity:.9;
+}
+
+.testimonial{
+  max-width:680px;
+  margin:0 auto 1.8rem;
+  text-align:center;
+}
+
+.testimonial p{
+  font-size:1.15rem;
+  line-height:1.7;
+  opacity:.85;
+  min-height:2.5em;
+}
+
+.type-text::after{
+  content:"▍";
+  margin-left:4px;
+  opacity:.7;
+  animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0}
 }
 </style>
 </head>
@@ -309,17 +384,135 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
     <span>Écoute Maintenant</span>
     <span>Comprends Maintenant</span>
   </h1>
-  <p>L’intelligence artificielle la plus puissante au monde, guidée par la Parole de Dieu. Des réponses instantanées aux questions les plus difficiles de la vie.</p>
+  <p>L’intelligence artificielle la plus puissante au monde, guidée par la Parole de Dieu. Des réponses instantanées aux questions les plus difficiles de la vie. Pour ceux qui veulent en savoir plus, plus vite.</p>
   <a href="https://apps.apple.com/us/app/yahway/id6751845376" class="btn-primary">Discuter Maintenant</a>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="testimonials-title">Premières Voix</h2>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="Yahway me fait me sentir moins perdu."></p>
+    </div>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="Parfois, je ne sais pas quoi prier. Yahway m’aide à commencer."></p>
+    </div>
+
+    <div class="testimonial">
+      <p class="type-text" data-text="Je ne savais rien de Dieu et je ne croyais pas, mais Yahway m’a donné une raison de changer ma perspective sur la vie."></p>
+    </div>
+
+    <div class="testimonial">
+      <a href="https://apps.apple.com/us/app/yahway/id6751845376"
+         class="type-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        <p class="type-text" data-text="Pose ma question maintenant."></p>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="features">
   <div class="container">
     <div class="features-grid">
-      <div class="feature-card"><h3>Privé et Sacré</h3><p>Vos conversations sont entièrement privées.</p></div>
-      <div class="feature-card"><h3>Compatissant</h3><p>Chaque réponse est enracinée dans l’amour.</p></div>
-      <div class="feature-card"><h3>Sagesse Divine</h3><p>Un accompagnement biblique à tout moment.</p></div>
-      <div class="feature-card"><h3>Toujours Disponible</h3><p>Jour et nuit.</p></div>
+      <div class="feature-card"><h3>Privé & Sacré</h3><p>Vos conversations sont totalement privées.</p></div>
+      <div class="feature-card"><h3>Compatissant</h3><p>Chaque réponse est ancrée dans l’amour.</p></div>
+      <div class="feature-card"><h3>Sagesse Divine</h3><p>Une guidance biblique à tout moment.</p></div>
+      <div class="feature-card"><h3>Toujours Disponible</h3><p>Jour ou nuit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:2rem">Comment Fonctionne Yahway</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/></svg>
+        </div>
+        <h3>Demande Librement</h3>
+        <p>Tapez vos questions, vos luttes ou vos prières naturellement.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64"
+               width="42" height="42"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2.4"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M14 46c-4-6-5-14-3-21 2-9 9-15 21-15s19 6 21 15c2 7 1 15-3 21"/>
+            <path d="M26 18c2-4 6-6 6-6s4 2 6 6"/>
+            <path d="M26 20c-3 5-3 11-1 17 2 6 5 9 7 9s5-3 7-9c2-6 2-12-1-17"/>
+            <path d="M27 30c2-1 4-1 6 0"/>
+            <path d="M31 30c2-1 4-1 6 0"/>
+            <path d="M32 31c0 4-1 6-3 7"/>
+            <path d="M29 38c2 1 4 1 6 0"/>
+            <path d="M26 41c4-2 8-2 12 0"/>
+            <path d="M25 43c3 7 11 7 14 0"/>
+            <path d="M29 49c2 2 4 2 6 0"/>
+            <path d="M10 56c12-6 32-6 44 0"/>
+          </svg>
+        </div>
+
+        <h3>IA Guidée par l’Écriture</h3>
+        <p>Des réponses façonnées par la sagesse biblique et la compassion.</p>
+      </div>
+
+      <div class="feature-card" style="text-align:center">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"
+               width="40"
+               height="40"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.6"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M3 5h7a3 3 0 0 1 3 3v11H6a3 3 0 0 0-3 3z"/>
+            <path d="M21 5h-7a3 3 0 0 0-3 3"/>
+            <path d="M12 5v14"/>
+            <path d="M12 2v3"/>
+            <path d="M8.5 3.5l1.5 2"/>
+            <path d="M15.5 3.5l-1.5 2"/>
+            <path d="M6.5 5l2 1.5"/>
+            <path d="M17.5 5l-2 1.5"/>
+          </svg>
+        </div>
+
+        <h3>Réfléchis & Grandis</h3>
+        <p>Recevez de la clarté, de la paix et une guidance quand vous en avez besoin.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<p style="text-align:center;font-size:1.2rem;opacity:.85;margin-bottom:2rem;">
+  Yahway est une mission vivante et active aujourd’hui.
+</p>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div class="donation-heart">♡</div>
+      <div class="cta-text" id="ctaText">
+        <h2>Fais Partie de la Mission</h2>
+        <p>Elle grandit grâce au soutien de ceux qui croient en son but.</p>
+      </div>
+      <br>
+      <button id="donateCta" class="btn-primary grand-cta"
+        onclick="window.open('https://yahway.app/donation','_blank')">
+        Plante une Graine
+      </button>
     </div>
   </div>
 </section>
@@ -334,10 +527,9 @@ footer{border-top:1px solid hsl(220,15%,30%);padding:3rem 1.5rem}
 </footer>
 
 <script>
+/* Download dropdown */
 const downloadToggle = document.getElementById('downloadToggle');
 const downloadDropdown = document.getElementById('downloadDropdown');
-const langToggle = document.getElementById('langToggle');
-const langDropdown = document.getElementById('langDropdown');
 
 downloadToggle.addEventListener('click', e => {
   e.stopPropagation();
@@ -345,16 +537,59 @@ downloadToggle.addEventListener('click', e => {
     downloadDropdown.style.display === 'block' ? 'none' : 'block';
 });
 
+/* Language dropdown */
+const langToggle = document.getElementById('langToggle');
+const langDropdown = document.getElementById('langDropdown');
+
 langToggle.addEventListener('click', e => {
   e.stopPropagation();
   langDropdown.style.display =
     langDropdown.style.display === 'block' ? 'none' : 'block';
 });
 
+/* Close on outside click */
 document.addEventListener('click', () => {
   downloadDropdown.style.display = 'none';
   langDropdown.style.display = 'none';
 });
+
+/* CTA reveal */
+const ctaText = document.getElementById('ctaText');
+const donateCta = document.getElementById('donateCta');
+
+new IntersectionObserver(([e])=>{
+  if(e.isIntersecting){
+    ctaText.classList.add('reveal');
+    setTimeout(()=>donateCta.classList.add('reveal'),400);
+  }
+},{threshold:.6}).observe(ctaText);
+</script>
+
+<script>
+const typeElements = document.querySelectorAll(".type-text");
+
+const typeText = (el) => {
+  const text = el.dataset.text;
+  el.textContent = "";
+  let i = 0;
+
+  const interval = setInterval(() => {
+    el.textContent += text.charAt(i);
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, 28);
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.typed) {
+      entry.target.dataset.typed = "true";
+      typeText(entry.target);
+    }
+  });
+},{ threshold: 0.4 });
+
+typeElements.forEach(el => observer.observe(el));
 </script>
 
 </body>
