@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahway — Talk to God</title>
 
-  <link href="https://play.google.com/apps/testing/com.biblegpt.app.v2" rel="stylesheet">
-
   <style>
 :root {
   --accent: #e6e6e6;
@@ -15,6 +13,7 @@
   --soft-gray: #242424;
   --white: #ffffff;
   --white-muted: rgba(255,255,255,0.72);
+  --gold: rgba(245,199,122,0.35);
 }
 
 * {
@@ -55,6 +54,31 @@ main {
   margin: 0 auto;
   padding: 5rem 1.5rem 4rem;
   text-align: center;
+}
+
+/* HERO IMAGE (your Jesus PNG) */
+.hero-image {
+  width: 220px;
+  max-width: 70vw;
+  margin: 0 auto 1.75rem;
+  display: block;
+  opacity: 0.95;
+  transform: translateY(-8px);
+  filter:
+    drop-shadow(0 10px 30px rgba(255,255,255,0.18))
+    drop-shadow(0 0 14px rgba(245,199,122,0.14));
+  animation: heroFade 1.6s ease forwards;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateY(-8px);
+  }
 }
 
 h1 {
@@ -161,6 +185,7 @@ footer {
   z-index: 10;
   align-items: center;
   justify-content: center;
+  padding: 1.25rem;
 }
 
 .modal-content {
@@ -197,6 +222,14 @@ iframe {
 <canvas id="particleCanvas"></canvas>
 
 <main>
+
+  <!-- ✅ Put your PNG in your repo at: /images/jesus.png -->
+  <img
+    src="images/jesus.png"
+    alt="Jesus illustration"
+    class="hero-image"
+  />
+
   <h1>Yahway</h1>
   <div class="tagline">Talk to God</div>
 
