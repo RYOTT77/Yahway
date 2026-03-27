@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spirit of Cape Fear - VIP Access</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+    color: #f5e6c8;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.75);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 30px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #d4af37;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #b8962e;
+}
+
+.perks {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.perks li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <h1>🏴‍☠️ Spirit of Cape Fear</h1>
+    <h2>Unlock VIP Voyage Access</h2>
+
+    <div class="container">
+
+        <p>Skip Airbnb fees. Claim exclusive perks, hidden treasures, and priority booking.</p>
+
+        <!-- 🔥 CONNECT THIS TO BREVO -->
+        <form action="YOUR_BREVO_FORM_URL" method="POST">
+            <input type="text" name="FIRSTNAME" placeholder="First Name" required>
+            <input type="email" name="EMAIL" placeholder="Email Address" required>
+            <input type="tel" name="SMS" placeholder="Phone Number" required>
+
+            <button type="submit">Get VIP Access ⚓</button>
+        </form>
+
+        <ul class="perks">
+            <li>⚓ Save on booking fees</li>
+            <li>💎 VIP guest pricing</li>
+            <li>🌊 Hidden Wilmington experiences</li>
+            <li>🔥 Exclusive stay upgrades</li>
+        </ul>
+
+        <div class="footer">
+            “Dead men tell no tales… but VIP guests get the best deals.”
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
