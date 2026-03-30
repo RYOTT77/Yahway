@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiFi Access</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 28px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.check {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+p {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.box {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.value {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.copy-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #f97316;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="check">✅</div>
+  <h1>You're Connected</h1>
+  <p>Here are your WiFi details</p>
+
+  <div class="box">
+    <div class="label">Network</div>
+    <div class="value" id="ssid">Graveyard</div>
+    <button class="copy-btn" onclick="copyText('ssid')">Copy Network</button>
+
+    <div class="label">Password</div>
+    <div class="value" id="password">Stuckinlove</div>
+    <button class="copy-btn" onclick="copyText('password')">Copy Password</button>
+  </div>
+
+</div>
+
+<script>
+function copyText(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Copied: " + text);
+}
+</script>
+
+</body>
+</html>
