@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yahway — Download for Android</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+  gtag('config', 'G-M6CYL733EV');
+
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('src') || 'direct';
+
+  // optional: pass source into Play Store referrer
+  const encodedReferrer = encodeURIComponent('utm_source=' + source + '&utm_medium=qr');
+
+  const playStoreUrl =
+    'https://play.google.com/store/apps/details?id=com.biblegpt.app.v2&referrer=' + encodedReferrer;
+
+  gtag('event', 'android_download_page_visit', { source });
+
+  setTimeout(() => {
+    gtag('event', 'android_play_store_redirect', { source });
+
+    setTimeout(() => {
+      window.location.href = playStoreUrl;
+    }, 300);
+  }, 1200);
+</script>
+</head>
+
+<body style="font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;background:#121212;color:white;text-align:center;">
+  <div>
+    <h1>Yahway</h1>
+    <p>Download for Android</p>
+    <a href="https://play.google.com/store/apps/details?id=com.biblegpt.app.v2"
+       onclick="gtag('event','android_manual_download_click',{source:new URLSearchParams(window.location.search).get('src')||'direct'})"
+       style="display:inline-block;padding:14px 24px;background:#34a853;color:white;border-radius:24px;text-decoration:none;">
+       Get it on Google Play
+    </a>
+    <p style="opacity:.7;margin-top:16px;">Redirecting…</p>
+  </div>
+</body>
+</html>
