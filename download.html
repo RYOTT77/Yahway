@@ -7,7 +7,7 @@
 <title>Yahway — Talk to God Anytime</title>
 <meta name="description" content="Ask questions. Receive guidance. Find peace. Yahway is an AI-powered spiritual companion.">
 
-<!-- Open Graph (iMessage / iOS / Facebook) -->
+<!-- Open Graph -->
 <meta property="og:title" content="Yahway — Ask God Anything, Guidance Instantly">
 <meta property="og:description" content="Ask questions. Receive guidance. Find peace.">
 <meta property="og:image" content="https://yahway.app/assets/yahway-share.png">
@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://yahway.app/assets/yahway-share.png">
 
 <!-- Apple Smart App Banner -->
-<meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+<meta name="apple-itunes-app" content="app-id=6751845376">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -30,7 +30,7 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
   background:hsl(220,25%,15%);
   color:#fff;
-  height:100vh;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -79,20 +79,32 @@ body{
 }
 </style>
 
-<script>
-setTimeout(function(){
-  window.location.href = "https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR";
-}, 1200);
-</script>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6CYL733EV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  gtag('js', new Date());
   gtag('config', 'G-M6CYL733EV');
+
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('src') || 'direct';
+  const appStoreUrl = 'https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR';
+
+  gtag('event', 'download_page_visit', {
+    source: source
+  });
+
+  setTimeout(function () {
+    gtag('event', 'app_store_redirect', {
+      source: source
+    });
+
+    setTimeout(function () {
+      window.location.href = appStoreUrl;
+    }, 300);
+  }, 1200);
 </script>
 </head>
 
@@ -101,13 +113,13 @@ setTimeout(function(){
     <div class="logo">Yahway</div>
     <div class="subtitle">Talk to God Anytime</div>
 
-    <a class="button" href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR">
+    <a class="button"
+       href="https://apps.apple.com/us/app/yahway/id6751845376?l=fr-FR"
+       onclick="if (typeof gtag === 'function') { gtag('event', 'manual_download_click', { source: new URLSearchParams(window.location.search).get('src') || 'direct' }); }">
       Download on the App Store
     </a>
 
-    <div class="footer">
-      Redirecting…
-    </div>
+    <div class="footer">Redirecting…</div>
   </div>
 </body>
 </html>
